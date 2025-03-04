@@ -11,7 +11,7 @@
 
     <groupId>dev.ikm.maven.tinkar</groupId>
     <artifactId>tinkar-starter-data-parent</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>Tinkar Starter Data Parent</name>
     <description>Tinkar Starter Data Parent Project</description>
     <packaging>pom</packaging>

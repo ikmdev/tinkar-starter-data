@@ -39,6 +39,7 @@
 				<artifactId>variable-search-replace-plugin</artifactId>
 				<executions>
 					<execution>
+						<phase>deploy</phase>
 						<goals>
 							<goal>replace</goal>
 						</goals>

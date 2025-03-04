@@ -209,6 +209,7 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-deploy-plugin</artifactId>
 				<configuration>
+					<repositoryId>${repositoryId}</repositoryId>
 					<url>${altDeploymentRepository}</url>
 					<groupId>${data-artifact.groupId}</groupId>
 					<artifactId>${data-artifact.artifactId}</artifactId>
@@ -261,6 +262,7 @@
 						<configuration>
 							<file>${project.build.directory}/${data-artifact.artifactId}-${data-artifact.version}-reasoned-pb.zip</file>
 							<classifier>reasoned-pb</classifier>
+							<type>zip</type>
 							<packaging>zip</packaging>
 						</configuration>
 					</execution>

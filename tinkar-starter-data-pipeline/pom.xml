@@ -19,6 +19,9 @@
 		<data-artifact.groupId>dev.ikm.data.tinkar</data-artifact.groupId>
 		<data-artifact.artifactId>tinkar-starter-data</data-artifact.artifactId>
 		<data-artifact.version>${project.version}</data-artifact.version>
+		<!-- Properties for Ease of Use -->
+		<data-artifact.prefix>${data-artifact.artifactId}-${data-artifact.version}</data-artifact.prefix>
+		<data-artifact.path-prefix>${project.build.directory}/${data-artifact.prefix}</data-artifact.path-prefix>
 	</properties>
 
 	<url>https://www.ikm.dev</url>
@@ -51,7 +54,7 @@
 						</goals>
 						<configuration>
 							<exportDirectory>${project.build.directory}</exportDirectory>
-							<fileName>${data-artifact.artifactId}-${data-artifact.version}-unreasoned-pb.zip</fileName>
+							<fileName>${data-artifact.prefix}-unreasoned-pb.zip</fileName>
 						</configuration>
 					</execution>
 					<!-- Run full reasoner starter data -->
@@ -69,7 +72,7 @@
 						</goals>
 						<configuration>
 							<exportDirectory>${project.build.directory}</exportDirectory>
-							<fileName>${data-artifact.artifactId}-${data-artifact.version}-reasoned-pb.zip</fileName>
+							<fileName>${data-artifact.prefix}-reasoned-pb.zip</fileName>
 						</configuration>
 					</execution>
 				</executions>
@@ -78,7 +81,7 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-assembly-plugin</artifactId>
 				<configuration>
-					<finalName>${data-artifact.artifactId}-${data-artifact.version}</finalName>
+					<finalName>${data-artifact.prefix}</finalName>
 					<attach>false</attach>
 					<inlineDescriptors>
 						<inlineDescriptor>
@@ -114,7 +117,7 @@
 									<id>unreasoned-sa</id>
 									<fileSets>
 										<fileSet>
-											<outputDirectory>${data-artifact.artifactId}-${data-artifact.version}-unreasoned-sa</outputDirectory>
+											<outputDirectory>${data-artifact.prefix}-unreasoned-sa</outputDirectory>
 										</fileSet>
 									</fileSets>
 								</inlineDescriptor>
@@ -134,7 +137,7 @@
 									<id>reasoned-sa</id>
 									<fileSets>
 										<fileSet>
-											<outputDirectory>${data-artifact.artifactId}-${data-artifact.version}-reasoned-sa</outputDirectory>
+											<outputDirectory>${data-artifact.prefix}-reasoned-sa</outputDirectory>
 										</fileSet>
 									</fileSets>
 								</inlineDescriptor>
@@ -161,7 +164,7 @@
 							<goal>install-file</goal>
 						</goals>
 						<configuration>
-							<file>${project.build.directory}/${data-artifact.artifactId}-${data-artifact.version}-unreasoned-sa.zip</file>
+							<file>${data-artifact.path-prefix}-unreasoned-sa.zip</file>
 							<classifier>unreasoned-sa</classifier>
 							<packaging>zip</packaging>
 						</configuration>
@@ -173,7 +176,7 @@
 						</goals>
 						<phase>install</phase>
 						<configuration>
-							<file>${project.build.directory}/${data-artifact.artifactId}-${data-artifact.version}-reasoned-sa.zip</file>
+							<file>${data-artifact.path-prefix}-reasoned-sa.zip</file>
 							<classifier>reasoned-sa</classifier>
 							<packaging>zip</packaging>
 						</configuration>
@@ -185,7 +188,7 @@
 						</goals>
 						<phase>install</phase>
 						<configuration>
-							<file>${project.build.directory}/${data-artifact.artifactId}-${data-artifact.version}-unreasoned-pb.zip</file>
+							<file>${data-artifact.path-prefix}-unreasoned-pb.zip</file>
 							<classifier>unreasoned-pb</classifier>
 							<packaging>zip</packaging>
 						</configuration>
@@ -197,7 +200,7 @@
 						</goals>
 						<phase>install</phase>
 						<configuration>
-							<file>${project.build.directory}/${data-artifact.artifactId}-${data-artifact.version}-reasoned-pb.zip</file>
+							<file>${data-artifact.path-prefix}-reasoned-pb.zip</file>
 							<classifier>reasoned-pb</classifier>
 							<packaging>zip</packaging>
 						</configuration>
@@ -209,60 +212,42 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-deploy-plugin</artifactId>
 				<configuration>
-					<repositoryId>${repositoryId}</repositoryId>
-					<url>${repositoryUrl}</url>
 					<groupId>${data-artifact.groupId}</groupId>
 					<artifactId>${data-artifact.artifactId}</artifactId>
 					<version>${data-artifact.version}</version>
-					<pomFile>${project.basedir}/pom.xml</pomFile>
+					<file>${project.basedir}/pom.xml</file>
+					<packaging>pom</packaging>
+					<files>
+						${data-artifact.path-prefix}-unreasoned-sa.zip,${data-artifact.path-prefix}-reasoned-sa.zip,${data-artifact.path-prefix}-unreasoned-pb.zip,${data-artifact.path-prefix}-reasoned-pb.zip
+					</files>
+					<classifiers>
+						unreasoned-sa,reasoned-sa,unreasoned-pb,reasoned-pb
+					</classifiers>
+					<types>zip,zip,zip,zip</types>
 				</configuration>
 				<executions>
 					<execution>
-						<id>deploy-unreasoned-sa</id>
+						<id>deploy-snapshots</id>
 						<phase>deploy</phase>
 						<goals>
 							<goal>deploy-file</goal>
 						</goals>
 						<configuration>
-							<file>${project.build.directory}/${data-artifact.artifactId}-${data-artifact.version}-unreasoned-sa.zip</file>
-							<classifier>unreasoned-sa</classifier>
-							<packaging>zip</packaging>
+							<skip>releases</skip> <!-- Only push SNAPSHOTS to this url -->
+							<repositoryId>${repositoryId}</repositoryId>
+							<url>${repositoryUrl}</url>
 						</configuration>
 					</execution>
 					<execution>
-						<id>deploy-reasoned-sa</id>
+						<id>deploy-releases</id>
 						<phase>deploy</phase>
 						<goals>
 							<goal>deploy-file</goal>
 						</goals>
 						<configuration>
-							<file>${project.build.directory}/${data-artifact.artifactId}-${data-artifact.version}-reasoned-sa.zip</file>
-							<classifier>reasoned-sa</classifier>
-							<packaging>zip</packaging>
-						</configuration>
-					</execution>
-					<execution>
-						<id>deploy-unreasoned-pb</id>
-						<phase>deploy</phase>
-						<goals>
-							<goal>deploy-file</goal>
-						</goals>
-						<configuration>
-							<file>${project.build.directory}/${data-artifact.artifactId}-${data-artifact.version}-unreasoned-pb.zip</file>
-							<classifier>unreasoned-pb</classifier>
-							<packaging>zip</packaging>
-						</configuration>
-					</execution>
-					<execution>
-						<id>deploy-reasoned-pb</id>
-						<phase>deploy</phase>
-						<goals>
-							<goal>deploy-file</goal>
-						</goals>
-						<configuration>
-							<file>${project.build.directory}/${data-artifact.artifactId}-${data-artifact.version}-reasoned-pb.zip</file>
-							<classifier>reasoned-pb</classifier>
-							<packaging>zip</packaging>
+							<skip>snapshots</skip> <!-- Only push RELEASES to this url -->
+							<repositoryId>${repositoryId}</repositoryId>
+							<url>${project.distributionManagement.repository.url}</url>
 						</configuration>
 					</execution>
 				</executions>
@@ -272,6 +257,7 @@
 
 	<profiles>
 		<profile>
+			<!-- Get the Repo URL from the altDeploymentRepository -->
 			<id>altDeployRepo</id>
 			<activation>
 				<property>

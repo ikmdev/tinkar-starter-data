@@ -41,6 +41,17 @@ jobs:
         with:
           token: ${{secrets.IKMDEVOPS_PAT_TOKEN}}
 
+      - name: Maven Build Plugin
+        shell: bash
+        run: |
+          ./mvnw clean install\
+            --batch-mode \
+            -U \
+            -e \
+            -Dmaven.build.cache.enabled=false \
+            -PcodeQuality \
+            -f tinkar-starter-data-maven-plugin
+
       - name: Shared Release Action
         uses: ikmdev/maven-semver-release-action@v1.0.0
         with:

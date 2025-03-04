@@ -233,19 +233,10 @@
                     <url>file:${project.build.directory}/local_deploy_repo/snapshot</url>
                 </snapshotRepository>
             </distributionManagement>
-            <build>
-                <pluginManagement>
-                    <plugins>
-                        <plugin>
-                            <groupId>org.apache.maven.plugins</groupId>
-                            <artifactId>maven-deploy-plugin</artifactId>
-                            <configuration>
-                                <url>file:${project.build.directory}/local_deploy_repo/release</url>
-                            </configuration>
-                        </plugin>
-                    </plugins>
-                </pluginManagement>
-            </build>
+            <properties>
+                <repositoryId>local-release</repositoryId>
+                <altDeploymentRepository>local-release::file:${project.build.directory}/local_deploy_repo/release</altDeploymentRepository>
+            </properties>
         </profile>
     </profiles>
 </project>

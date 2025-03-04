@@ -27,6 +27,28 @@
 	<url>https://www.ikm.dev</url>
 
 	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-deploy-plugin</artifactId>
+					<configuration>
+						<groupId>${data-artifact.groupId}</groupId>
+						<artifactId>${data-artifact.artifactId}</artifactId>
+						<version>${data-artifact.version}</version>
+						<file>${project.basedir}/pom.xml</file>
+						<packaging>pom</packaging>
+						<files>
+							${data-artifact.path-prefix}-unreasoned-sa.zip,${data-artifact.path-prefix}-reasoned-sa.zip,${data-artifact.path-prefix}-unreasoned-pb.zip,${data-artifact.path-prefix}-reasoned-pb.zip
+						</files>
+						<classifiers>
+							unreasoned-sa,reasoned-sa,unreasoned-pb,reasoned-pb
+						</classifiers>
+						<types>zip,zip,zip,zip</types>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
 		<plugins>
 			<plugin>
 				<groupId>dev.ikm.maven.tinkar</groupId>
@@ -211,20 +233,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-deploy-plugin</artifactId>
-				<configuration>
-					<groupId>${data-artifact.groupId}</groupId>
-					<artifactId>${data-artifact.artifactId}</artifactId>
-					<version>${data-artifact.version}</version>
-					<file>${project.basedir}/pom.xml</file>
-					<packaging>pom</packaging>
-					<files>
-						${data-artifact.path-prefix}-unreasoned-sa.zip,${data-artifact.path-prefix}-reasoned-sa.zip,${data-artifact.path-prefix}-unreasoned-pb.zip,${data-artifact.path-prefix}-reasoned-pb.zip
-					</files>
-					<classifiers>
-						unreasoned-sa,reasoned-sa,unreasoned-pb,reasoned-pb
-					</classifiers>
-					<types>zip,zip,zip,zip</types>
-				</configuration>
 				<executions>
 					<execution>
 						<id>deploy-snapshots</id>
@@ -233,21 +241,9 @@
 							<goal>deploy-file</goal>
 						</goals>
 						<configuration>
-							<skip>releases</skip> <!-- Only push SNAPSHOTS to this url -->
+							<skip>releases</skip> <!-- Only push SNAPSHOTS to this url - see below for release config -->
 							<repositoryId>${repositoryId}</repositoryId>
 							<url>${repositoryUrl}</url>
-						</configuration>
-					</execution>
-					<execution>
-						<id>deploy-releases</id>
-						<phase>deploy</phase>
-						<goals>
-							<goal>deploy-file</goal>
-						</goals>
-						<configuration>
-							<skip>snapshots</skip> <!-- Only push RELEASES to this url -->
-							<repositoryId>${repositoryId}</repositoryId>
-							<url>${project.distributionManagement.repository.url}</url>
 						</configuration>
 					</execution>
 				</executions>
@@ -256,6 +252,37 @@
 	</build>
 
 	<profiles>
+		<profile>
+			<id>deployDataReleaseArtifacts</id>
+			<activation>
+				<property>
+					<name>repositoryId</name>
+					<value>ossrh</value>
+				</property>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-deploy-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>deploy-releases</id>
+								<phase>deploy</phase>
+								<goals>
+									<goal>deploy-file</goal>
+								</goals>
+								<configuration>
+									<skip>snapshots</skip> <!-- Only push RELEASES to this url - see above for snapshot config -->
+									<repositoryId>${repositoryId}</repositoryId>
+									<url>${project.distributionManagement.repository.url}</url>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
 		<profile>
 			<!-- Get the Repo URL from the altDeploymentRepository -->
 			<id>altDeployRepo</id>

@@ -218,17 +218,16 @@
                     <artifactId>properties-maven-plugin</artifactId>
                     <version>${properties-maven-plugin.version}</version>
                 </plugin>
-                       <plugin>
-                        <groupId>org.sonatype.plugins</groupId>
-                        <artifactId>nexus-staging-maven-plugin</artifactId>
-                        <extensions>true</extensions>
-                        <configuration>
-                            <autoReleaseAfterClose>false</autoReleaseAfterClose>
-                        </configuration>
-                    </plugin>
+                <plugin>
+                     <groupId>org.sonatype.plugins</groupId>
+                     <artifactId>nexus-staging-maven-plugin</artifactId>
+                     <extensions>true</extensions>
+                     <configuration>
+                         <autoReleaseAfterClose>false</autoReleaseAfterClose>
+                     </configuration>
+               </plugin>
             </plugins>
         </pluginManagement>
     </build>
-
 </project>
 

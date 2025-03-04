@@ -24,34 +24,7 @@
 	<url>https://www.ikm.dev</url>
 
 	<build>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>io.github.1tchy</groupId>
-					<artifactId>variable-search-replace-plugin</artifactId>
-					<version>1.3</version>
-				</plugin>
-			</plugins>
-		</pluginManagement>
 		<plugins>
-			<plugin>
-				<groupId>io.github.1tchy</groupId>
-				<artifactId>variable-search-replace-plugin</artifactId>
-				<executions>
-					<execution>
-						<phase>deploy</phase>
-						<goals>
-							<goal>replace</goal>
-						</goals>
-						<configuration>
-							<text>${altDeploymentRepository}</text>
-							<search>^[^:]*::</search>
-							<replacement></replacement>
-							<variableName>repositoryUrl</variableName>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
 			<plugin>
 				<groupId>dev.ikm.maven.tinkar</groupId>
 				<artifactId>tinkar-starter-data-maven-plugin</artifactId>
@@ -241,81 +214,100 @@
 					<groupId>${data-artifact.groupId}</groupId>
 					<artifactId>${data-artifact.artifactId}</artifactId>
 					<version>${data-artifact.version}</version>
-					<generatePom>false</generatePom>
-<!--					<pomFile>${project.basedir}/pom.xml</pomFile>-->
+					<pomFile>${project.basedir}/pom.xml</pomFile>
 				</configuration>
 				<executions>
 					<execution>
-						<id>deploy-data-artifacts</id>
+						<id>deploy-unreasoned-sa</id>
 						<phase>deploy</phase>
 						<goals>
 							<goal>deploy-file</goal>
 						</goals>
 						<configuration>
-							<file>${project.basedir}/pom.xml</file>
-							<packaging>pom</packaging>
-							<files>
-								${project.build.directory}/${data-artifact.artifactId}-${data-artifact.version}-unreasoned-sa.zip,${project.build.directory}/${data-artifact.artifactId}-${data-artifact.version}-reasoned-sa.zip,${project.build.directory}/${data-artifact.artifactId}-${data-artifact.version}-unreasoned-pb.zip,${project.build.directory}/${data-artifact.artifactId}-${data-artifact.version}-reasoned-pb.zip
-							</files>
-							<classifiers>
-								unreasoned-sa,reasoned-sa,unreasoned-pb,reasoned-pb
-							</classifiers>
-							<types>
-								zip,zip,zip,zip
-							</types>
+							<file>${project.build.directory}/${data-artifact.artifactId}-${data-artifact.version}-unreasoned-sa.zip</file>
+							<classifier>unreasoned-sa</classifier>
+							<packaging>zip</packaging>
 						</configuration>
 					</execution>
-<!--					<execution>-->
-<!--						<id>deploy-unreasoned-sa</id>-->
-<!--						<phase>deploy</phase>-->
-<!--						<goals>-->
-<!--							<goal>deploy-file</goal>-->
-<!--						</goals>-->
-<!--						<configuration>-->
-<!--							<file>${project.build.directory}/${data-artifact.artifactId}-${data-artifact.version}-unreasoned-sa.zip</file>-->
-<!--							<classifier>unreasoned-sa</classifier>-->
-<!--							<packaging>zip</packaging>-->
-<!--						</configuration>-->
-<!--					</execution>-->
-<!--					<execution>-->
-<!--						<id>deploy-reasoned-sa</id>-->
-<!--						<phase>deploy</phase>-->
-<!--						<goals>-->
-<!--							<goal>deploy-file</goal>-->
-<!--						</goals>-->
-<!--						<configuration>-->
-<!--							<file>${project.build.directory}/${data-artifact.artifactId}-${data-artifact.version}-reasoned-sa.zip</file>-->
-<!--							<classifier>reasoned-sa</classifier>-->
-<!--							<packaging>zip</packaging>-->
-<!--						</configuration>-->
-<!--					</execution>-->
-<!--					<execution>-->
-<!--						<id>deploy-unreasoned-pb</id>-->
-<!--						<phase>deploy</phase>-->
-<!--						<goals>-->
-<!--							<goal>deploy-file</goal>-->
-<!--						</goals>-->
-<!--						<configuration>-->
-<!--							<file>${project.build.directory}/${data-artifact.artifactId}-${data-artifact.version}-unreasoned-pb.zip</file>-->
-<!--							<classifier>unreasoned-pb</classifier>-->
-<!--							<packaging>zip</packaging>-->
-<!--						</configuration>-->
-<!--					</execution>-->
-<!--					<execution>-->
-<!--						<id>deploy-reasoned-pb</id>-->
-<!--						<phase>deploy</phase>-->
-<!--						<goals>-->
-<!--							<goal>deploy-file</goal>-->
-<!--						</goals>-->
-<!--						<configuration>-->
-<!--							<file>${project.build.directory}/${data-artifact.artifactId}-${data-artifact.version}-reasoned-pb.zip</file>-->
-<!--							<classifier>reasoned-pb</classifier>-->
-<!--							<type>zip</type>-->
-<!--							<packaging>zip</packaging>-->
-<!--						</configuration>-->
-<!--					</execution>-->
+					<execution>
+						<id>deploy-reasoned-sa</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>deploy-file</goal>
+						</goals>
+						<configuration>
+							<file>${project.build.directory}/${data-artifact.artifactId}-${data-artifact.version}-reasoned-sa.zip</file>
+							<classifier>reasoned-sa</classifier>
+							<packaging>zip</packaging>
+						</configuration>
+					</execution>
+					<execution>
+						<id>deploy-unreasoned-pb</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>deploy-file</goal>
+						</goals>
+						<configuration>
+							<file>${project.build.directory}/${data-artifact.artifactId}-${data-artifact.version}-unreasoned-pb.zip</file>
+							<classifier>unreasoned-pb</classifier>
+							<packaging>zip</packaging>
+						</configuration>
+					</execution>
+					<execution>
+						<id>deploy-reasoned-pb</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>deploy-file</goal>
+						</goals>
+						<configuration>
+							<file>${project.build.directory}/${data-artifact.artifactId}-${data-artifact.version}-reasoned-pb.zip</file>
+							<classifier>reasoned-pb</classifier>
+							<packaging>zip</packaging>
+						</configuration>
+					</execution>
 				</executions>
 			</plugin>
 		</plugins>
 	</build>
+
+	<profiles>
+		<profile>
+			<id>altDeployRepo</id>
+			<activation>
+				<property>
+					<name>altDeploymentRepository</name>
+				</property>
+			</activation>
+			<build>
+				<pluginManagement>
+					<plugins>
+						<plugin>
+							<groupId>io.github.1tchy</groupId>
+							<artifactId>variable-search-replace-plugin</artifactId>
+							<version>1.3</version>
+						</plugin>
+					</plugins>
+				</pluginManagement>
+				<plugins>
+					<plugin>
+						<groupId>io.github.1tchy</groupId>
+						<artifactId>variable-search-replace-plugin</artifactId>
+						<executions>
+							<execution>
+								<goals>
+									<goal>replace</goal>
+								</goals>
+								<configuration>
+									<text>${altDeploymentRepository}</text>
+									<search>^[^:]*::</search>
+									<replacement></replacement>
+									<variableName>repositoryUrl</variableName>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>

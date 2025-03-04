@@ -235,7 +235,7 @@
             </distributionManagement>
             <properties>
                 <repositoryId>local-release</repositoryId>
-                <altDeploymentRepository>local-release::file:${project.build.directory}/local_deploy_repo/release</altDeploymentRepository>
+                <repositoryUrl>file:${project.build.directory}/local_deploy_repo/release</repositoryUrl>
             </properties>
         </profile>
     </profiles>

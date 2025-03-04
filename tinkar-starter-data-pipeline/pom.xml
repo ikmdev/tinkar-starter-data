@@ -114,7 +114,7 @@
 									<id>unreasoned-sa</id>
 									<fileSets>
 										<fileSet>
-											<outputDirectory>${data-artifact.artifactId}-${data-artifact.version}-unreasoned-sa</outputDirectory>
+											<outputDirectory>unreasoned-sa/${data-artifact.artifactId}-${data-artifact.version}</outputDirectory>
 										</fileSet>
 									</fileSets>
 								</inlineDescriptor>
@@ -161,7 +161,7 @@
 							<goal>install-file</goal>
 						</goals>
 						<configuration>
-							<file>${project.build.directory}/${data-artifact.artifactId}-${data-artifact.version}-unreasoned-sa.zip</file>
+							<file>${project.build.directory}/unreasoned-sa/${data-artifact.artifactId}-${data-artifact.version}.zip</file>
 							<classifier>unreasoned-sa</classifier>
 							<packaging>zip</packaging>
 						</configuration>
@@ -224,7 +224,7 @@
 							<goal>deploy-file</goal>
 						</goals>
 						<configuration>
-							<file>${project.build.directory}/${data-artifact.artifactId}-${data-artifact.version}-unreasoned-sa.zip</file>
+							<file>${project.build.directory}/unreasoned-sa/${data-artifact.artifactId}-${data-artifact.version}.zip</file>
 							<classifier>unreasoned-sa</classifier>
 							<packaging>zip</packaging>
 						</configuration>

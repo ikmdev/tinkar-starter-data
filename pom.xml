@@ -38,7 +38,6 @@
         <!-- Properties Definition -->
         <tinkar-starter-data-properties.groupId>dev.ikm.maven.tinkar</tinkar-starter-data-properties.groupId>
         <tinkar-starter-data-properties.artifactId>tinkar-starter-data-properties</tinkar-starter-data-properties.artifactId>
-        <data-artifact-deploy-url>file:${project.build.directory}/local_deploy_repo/release</data-artifact-deploy-url>
     </properties>
 
     <modules>
@@ -75,17 +74,6 @@
     <scm>
         <url>http://www.github.com/ikmdev/tinkar-data</url>
     </scm>
-
-    <distributionManagement>
-        <repository>
-            <id>local-release</id>
-            <url>file:${project.build.directory}/local_deploy_repo/release</url>
-        </repository>
-        <snapshotRepository>
-            <id>local-snapshot</id>
-            <url>file:${project.build.directory}/local_deploy_repo/snapshot</url>
-        </snapshotRepository>
-    </distributionManagement>
 
     <dependencyManagement>
         <dependencies>
@@ -221,5 +209,36 @@
             </plugins>
         </pluginManagement>
     </build>
+
+    <profiles>
+        <profile>
+            <id>localDeploy</id>
+            <distributionManagement>
+                <repository>
+                    <id>local-release</id>
+                    <name>Local Release Repository</name>
+                    <url>file:${project.build.directory}/local_deploy_repo/release</url>
+                </repository>
+                <snapshotRepository>
+                    <id>local-snapshot</id>
+                    <name>Local SNAPSHOT Repository</name>
+                    <url>file:${project.build.directory}/local_deploy_repo/snapshot</url>
+                </snapshotRepository>
+            </distributionManagement>
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-deploy-plugin</artifactId>
+                            <configuration>
+                                <url>file:${project.build.directory}/local_deploy_repo/release</url>
+                            </configuration>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+            </build>
+        </profile>
+    </profiles>
 </project>
 

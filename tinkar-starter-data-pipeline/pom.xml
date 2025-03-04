@@ -23,19 +23,6 @@
 
 	<url>https://www.ikm.dev</url>
 
-	<distributionManagement>
-		<repository>
-			<id>local-release</id>
-			<name>Local Release Repository</name>
-			<url>file:${project.build.directory}/local_deploy_repo/release</url>
-		</repository>
-		<snapshotRepository>
-			<id>local-snapshot</id>
-			<name>Local SNAPSHOT Repository</name>
-			<url>file:${project.build.directory}/local_deploy_repo/snapshot</url>
-		</snapshotRepository>
-	</distributionManagement>
-
 	<build>
 		<plugins>
 			<plugin>
@@ -176,6 +163,7 @@
 						<configuration>
 							<file>${project.build.directory}/${data-artifact.artifactId}-${data-artifact.version}-unreasoned-sa.zip</file>
 							<classifier>unreasoned-sa</classifier>
+							<packaging>zip</packaging>
 						</configuration>
 					</execution>
 					<execution>
@@ -187,6 +175,7 @@
 						<configuration>
 							<file>${project.build.directory}/${data-artifact.artifactId}-${data-artifact.version}-reasoned-sa.zip</file>
 							<classifier>reasoned-sa</classifier>
+							<packaging>zip</packaging>
 						</configuration>
 					</execution>
 					<execution>
@@ -198,6 +187,7 @@
 						<configuration>
 							<file>${project.build.directory}/${data-artifact.artifactId}-${data-artifact.version}-unreasoned-pb.zip</file>
 							<classifier>unreasoned-pb</classifier>
+							<packaging>zip</packaging>
 						</configuration>
 					</execution>
 					<execution>
@@ -209,6 +199,7 @@
 						<configuration>
 							<file>${project.build.directory}/${data-artifact.artifactId}-${data-artifact.version}-reasoned-pb.zip</file>
 							<classifier>reasoned-pb</classifier>
+							<packaging>zip</packaging>
 						</configuration>
 					</execution>
 				</executions>
@@ -217,13 +208,12 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-deploy-plugin</artifactId>
+				<version>3.1.4</version>
 				<configuration>
-					<url>${data-artifact-deploy-url}</url>
 					<groupId>${data-artifact.groupId}</groupId>
 					<artifactId>${data-artifact.artifactId}</artifactId>
 					<version>${data-artifact.version}</version>
-					<generatePom>false</generatePom>
-<!--					<pomFile>${project.basedir}/pom.xml</pomFile>-->
+					<pomFile>${project.basedir}/pom.xml</pomFile>
 				</configuration>
 				<executions>
 					<execution>

@@ -114,7 +114,7 @@
 									<id>unreasoned-sa</id>
 									<fileSets>
 										<fileSet>
-											<outputDirectory>unreasoned-sa/${data-artifact.artifactId}-${data-artifact.version}</outputDirectory>
+											<outputDirectory>${data-artifact.artifactId}-${data-artifact.version}-unreasoned-sa</outputDirectory>
 										</fileSet>
 									</fileSets>
 								</inlineDescriptor>
@@ -161,7 +161,7 @@
 							<goal>install-file</goal>
 						</goals>
 						<configuration>
-							<file>${project.build.directory}/unreasoned-sa/${data-artifact.artifactId}-${data-artifact.version}.zip</file>
+							<file>${project.build.directory}/${data-artifact.artifactId}-${data-artifact.version}-unreasoned-sa.zip</file>
 							<classifier>unreasoned-sa</classifier>
 							<packaging>zip</packaging>
 						</configuration>
@@ -214,58 +214,79 @@
 					<groupId>${data-artifact.groupId}</groupId>
 					<artifactId>${data-artifact.artifactId}</artifactId>
 					<version>${data-artifact.version}</version>
-					<pomFile>${project.basedir}/pom.xml</pomFile>
+					<generatePom>false</generatePom>
+<!--					<pomFile>${project.basedir}/pom.xml</pomFile>-->
 				</configuration>
 				<executions>
 					<execution>
-						<id>deploy-unreasoned-sa</id>
+						<id>deploy-data-artifacts</id>
 						<phase>deploy</phase>
 						<goals>
 							<goal>deploy-file</goal>
 						</goals>
 						<configuration>
-							<file>${project.build.directory}/unreasoned-sa/${data-artifact.artifactId}-${data-artifact.version}.zip</file>
-							<classifier>unreasoned-sa</classifier>
-							<packaging>zip</packaging>
+							<file>${project.basedir}/pom.xml</file>
+							<packaging>pom</packaging>
+							<files>
+								${project.build.directory}/${data-artifact.artifactId}-${data-artifact.version}-unreasoned-sa.zip,${project.build.directory}/${data-artifact.artifactId}-${data-artifact.version}-reasoned-sa.zip,${project.build.directory}/${data-artifact.artifactId}-${data-artifact.version}-unreasoned-pb.zip,${project.build.directory}/${data-artifact.artifactId}-${data-artifact.version}-reasoned-pb.zip
+							</files>
+							<classifiers>
+								unreasoned-sa,reasoned-sa,unreasoned-pb,reasoned-pb
+							</classifiers>
+							<types>
+								zip,zip,zip,zip
+							</types>
 						</configuration>
 					</execution>
-					<execution>
-						<id>deploy-reasoned-sa</id>
-						<phase>deploy</phase>
-						<goals>
-							<goal>deploy-file</goal>
-						</goals>
-						<configuration>
-							<file>${project.build.directory}/${data-artifact.artifactId}-${data-artifact.version}-reasoned-sa.zip</file>
-							<classifier>reasoned-sa</classifier>
-							<packaging>zip</packaging>
-						</configuration>
-					</execution>
-					<execution>
-						<id>deploy-unreasoned-pb</id>
-						<phase>deploy</phase>
-						<goals>
-							<goal>deploy-file</goal>
-						</goals>
-						<configuration>
-							<file>${project.build.directory}/${data-artifact.artifactId}-${data-artifact.version}-unreasoned-pb.zip</file>
-							<classifier>unreasoned-pb</classifier>
-							<packaging>zip</packaging>
-						</configuration>
-					</execution>
-					<execution>
-						<id>deploy-reasoned-pb</id>
-						<phase>deploy</phase>
-						<goals>
-							<goal>deploy-file</goal>
-						</goals>
-						<configuration>
-							<file>${project.build.directory}/${data-artifact.artifactId}-${data-artifact.version}-reasoned-pb.zip</file>
-							<classifier>reasoned-pb</classifier>
-							<type>zip</type>
-							<packaging>zip</packaging>
-						</configuration>
-					</execution>
+<!--					<execution>-->
+<!--						<id>deploy-unreasoned-sa</id>-->
+<!--						<phase>deploy</phase>-->
+<!--						<goals>-->
+<!--							<goal>deploy-file</goal>-->
+<!--						</goals>-->
+<!--						<configuration>-->
+<!--							<file>${project.build.directory}/${data-artifact.artifactId}-${data-artifact.version}-unreasoned-sa.zip</file>-->
+<!--							<classifier>unreasoned-sa</classifier>-->
+<!--							<packaging>zip</packaging>-->
+<!--						</configuration>-->
+<!--					</execution>-->
+<!--					<execution>-->
+<!--						<id>deploy-reasoned-sa</id>-->
+<!--						<phase>deploy</phase>-->
+<!--						<goals>-->
+<!--							<goal>deploy-file</goal>-->
+<!--						</goals>-->
+<!--						<configuration>-->
+<!--							<file>${project.build.directory}/${data-artifact.artifactId}-${data-artifact.version}-reasoned-sa.zip</file>-->
+<!--							<classifier>reasoned-sa</classifier>-->
+<!--							<packaging>zip</packaging>-->
+<!--						</configuration>-->
+<!--					</execution>-->
+<!--					<execution>-->
+<!--						<id>deploy-unreasoned-pb</id>-->
+<!--						<phase>deploy</phase>-->
+<!--						<goals>-->
+<!--							<goal>deploy-file</goal>-->
+<!--						</goals>-->
+<!--						<configuration>-->
+<!--							<file>${project.build.directory}/${data-artifact.artifactId}-${data-artifact.version}-unreasoned-pb.zip</file>-->
+<!--							<classifier>unreasoned-pb</classifier>-->
+<!--							<packaging>zip</packaging>-->
+<!--						</configuration>-->
+<!--					</execution>-->
+<!--					<execution>-->
+<!--						<id>deploy-reasoned-pb</id>-->
+<!--						<phase>deploy</phase>-->
+<!--						<goals>-->
+<!--							<goal>deploy-file</goal>-->
+<!--						</goals>-->
+<!--						<configuration>-->
+<!--							<file>${project.build.directory}/${data-artifact.artifactId}-${data-artifact.version}-reasoned-pb.zip</file>-->
+<!--							<classifier>reasoned-pb</classifier>-->
+<!--							<type>zip</type>-->
+<!--							<packaging>zip</packaging>-->
+<!--						</configuration>-->
+<!--					</execution>-->
 				</executions>
 			</plugin>
 		</plugins>

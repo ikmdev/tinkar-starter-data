@@ -124,11 +124,6 @@
 	<profiles>
 		<profile>
 			<id>generateData</id>
-			<activation>
-				<file>
-					<missing>target/datastore</missing>
-				</file>
-			</activation>
 			<build>
 				<plugins>
 					<plugin>

@@ -31,7 +31,7 @@ jobs:
             distribution: 'zulu'
           
       - name: Build IKMDEV Code
-        uses: ikmdev/maven-clean-install-build-action@v2.0.0
+        uses: ikmdev/maven-clean-install-build-action@main
         with:
           branch_name: ${{github.ref_name}}
          

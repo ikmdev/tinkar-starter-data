@@ -27,7 +27,8 @@
         <maven-plugin-plugin.version>3.15.1</maven-plugin-plugin.version>
         <maven-plugin-annotations.version>3.15.1</maven-plugin-annotations.version>
         <maven-plugin-api.version>3.9.8</maven-plugin-api.version>
-        <maven-dependency-plugin>3.8.1</maven-dependency-plugin>
+        <maven-dependency-plugin.version>3.8.1</maven-dependency-plugin.version>
+        <maven-gpg-plugin.version>3.2.7</maven-gpg-plugin.version>
         <properties-maven-plugin.version>1.2.1</properties-maven-plugin.version>
         <build-helper-maven-plugin.version>3.6.0</build-helper-maven-plugin.version>
         <!-- Testing dependencies -->
@@ -198,8 +199,8 @@
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-dependency-plugin</artifactId>
-                    <version>${maven-dependency-plugin}</version>
+                    <artifactId>maven-dependency-plugin.version</artifactId>
+                    <version>${maven-dependency-plugin.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
@@ -235,7 +236,8 @@
             </distributionManagement>
             <properties>
                 <repositoryId>local-release</repositoryId>
-                <repositoryUrl>file:${project.build.directory}/local_deploy_repo/snapshot</repositoryUrl>
+                <deployRepositoryUrl>file:${project.build.directory}/local_deploy_repo/snapshot</deployRepositoryUrl>
+                <gpg.skip>true</gpg.skip>
             </properties>
         </profile>
     </profiles>

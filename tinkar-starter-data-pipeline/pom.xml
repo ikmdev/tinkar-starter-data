@@ -13,8 +13,35 @@
 
 	<artifactId>tinkar-starter-data-pipeline</artifactId>
 	<packaging>pom</packaging>
+
 	<name>Tinkar Starter Data Pipeline</name>
 	<description>Tinkar Starter Data Pipeline Project</description>
+	<url>https://www.ikm.dev</url>
+
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+			<comments>A business-friendly OSS license</comments>
+		</license>
+	</licenses>
+
+	<developers>
+		<!-- OSSRH Related Developer (Start) -->
+		<developer>
+			<id>ikmdev</id>
+			<name>IKM Development Team</name>
+			<email>support@ikm.dev</email>
+		</developer>
+		<!-- OSSRH Related Developer (End) -->
+	</developers>
+
+	<scm>
+		<connection>scm:git:git://github.com/ikmdev/tinkar-starter-data.git</connection>
+		<developerConnection>scm:git:ssh://github.com:ikmdev/tinkar-starter-data.git</developerConnection>
+		<url>http://www.github.com/ikmdev/tinkar-starter-data</url>
+	</scm>
 
 	<properties>
 		<data-artifact.groupId>dev.ikm.data.tinkar</data-artifact.groupId>
@@ -27,8 +54,6 @@
 		<deploymentClassifiers>unreasoned-sa,reasoned-sa,unreasoned-pb,reasoned-pb</deploymentClassifiers>
 		<deploymentTypes>zip,zip,zip,zip</deploymentTypes>
 	</properties>
-
-	<url>https://www.ikm.dev</url>
 
 	<build>
 		<plugins>

@@ -16,8 +16,6 @@
     <name>Tinkar Data Maven Plugin</name>
     <description>Tinkar Starter Data Maven Plugin Project</description>
 
-    <url>http://maven.apache.org</url>
-
     <dependencies>
         <dependency>
             <groupId>dev.ikm.tinkar</groupId>

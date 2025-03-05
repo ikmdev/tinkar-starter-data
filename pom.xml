@@ -73,7 +73,7 @@
     </developers>
 
     <scm>
-        <url>http://www.github.com/ikmdev/tinkar-data</url>
+        <url>http://www.github.com/ikmdev/tinkar-starter-data</url>
     </scm>
 
     <dependencyManagement>

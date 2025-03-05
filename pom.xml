@@ -237,7 +237,6 @@
             <properties>
                 <repositoryId>local-release</repositoryId>
                 <deployRepositoryUrl>file:${project.build.directory}/local_deploy_repo/snapshot</deployRepositoryUrl>
-                <gpg.skip>true</gpg.skip>
             </properties>
         </profile>
     </profiles>

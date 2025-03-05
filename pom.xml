@@ -12,9 +12,39 @@
     <groupId>dev.ikm.maven.tinkar</groupId>
     <artifactId>tinkar-starter-data-parent</artifactId>
     <version>1.0.3-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
     <name>Tinkar Starter Data Parent</name>
     <description>Tinkar Starter Data Parent Project</description>
-    <packaging>pom</packaging>
+    <url>http://www.ikm.dev</url>
+
+    <organization>
+        <name>Integrated Knowledge Management</name>
+        <url>http://www.ikm.dev</url>
+    </organization>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+            <comments>A business-friendly OSS license</comments>
+        </license>
+    </licenses>
+
+    <developers>
+        <!-- OSSRH Related Developer (Start) -->
+        <developer>
+            <id>ikmdev</id>
+            <name>IKM Development Team</name>
+            <email>support@ikm.dev</email>
+        </developer>
+        <!-- OSSRH Related Developer (End) -->
+    </developers>
+
+    <scm>
+        <url>http://www.github.com/ikmdev/tinkar-starter-data</url>
+    </scm>
 
     <properties>
         <!-- Tinkar dependencies -->
@@ -45,36 +75,6 @@
         <module>tinkar-starter-data-maven-plugin</module>
         <module>tinkar-starter-data-pipeline</module>
     </modules>
-
-    <url>http://www.ikm.dev</url>
-
-    <organization>
-        <name>Integrated Knowledge Management</name>
-        <url>http://www.ikm.dev</url>
-    </organization>
-
-    <licenses>
-        <license>
-            <name>Apache License, Version 2.0</name>
-            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
-            <distribution>repo</distribution>
-            <comments>A business-friendly OSS license</comments>
-        </license>
-    </licenses>
-
-    <developers>
-        <!-- OSSRH Related Developer (Start) -->
-        <developer>
-            <id>ikmdev</id>
-            <name>IKM Development Team</name>
-            <email>support@ikm.dev</email>
-        </developer>
-        <!-- OSSRH Related Developer (End) -->
-    </developers>
-
-    <scm>
-        <url>http://www.github.com/ikmdev/tinkar-starter-data</url>
-    </scm>
 
     <dependencyManagement>
         <dependencies>

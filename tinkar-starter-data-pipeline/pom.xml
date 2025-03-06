@@ -273,6 +273,7 @@
 									<groupId>${data-artifact.groupId}</groupId>
 									<artifactId>${data-artifact.artifactId}</artifactId>
 									<version>${data-artifact.version}</version>
+									<pomFile>${project.basedir}/pom.xml</pomFile>
 									<file>${project.basedir}/pom.xml</file>
 									<packaging>pom</packaging>
 									<files>${deploymentFiles}</files>
@@ -311,6 +312,7 @@
 									<groupId>${data-artifact.groupId}</groupId>
 									<artifactId>${data-artifact.artifactId}</artifactId>
 									<version>${data-artifact.version}</version>
+									<pomFile>${project.basedir}/pom.xml</pomFile>
 									<file>${project.basedir}/pom.xml</file>
 									<packaging>pom</packaging>
 									<files>${deploymentFiles}</files>

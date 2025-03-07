@@ -273,9 +273,10 @@
 									<groupId>${data-artifact.groupId}</groupId>
 									<artifactId>${data-artifact.artifactId}</artifactId>
 									<version>${data-artifact.version}</version>
-									<pomFile>${project.basedir}/pom.xml</pomFile>
+									<generatePom>true</generatePom>
+									<description>${data-artifact.artifactId} self-described generated data</description>
 									<file>${project.basedir}/pom.xml</file>
-									<packaging>pom</packaging>
+									<classifier>pipeline</classifier>
 									<files>${deploymentFiles}</files>
 									<classifiers>${deploymentClassifiers}</classifiers>
 									<types>${deploymentTypes}</types>
@@ -312,9 +313,10 @@
 									<groupId>${data-artifact.groupId}</groupId>
 									<artifactId>${data-artifact.artifactId}</artifactId>
 									<version>${data-artifact.version}</version>
-									<pomFile>${project.basedir}/pom.xml</pomFile>
+									<generatePom>true</generatePom>
+									<description>${data-artifact.artifactId} self-described generated data</description>
 									<file>${project.basedir}/pom.xml</file>
-									<packaging>pom</packaging>
+									<classifier>pipeline</classifier>
 									<files>${deploymentFiles}</files>
 									<classifiers>${deploymentClassifiers}</classifiers>
 									<types>${deploymentTypes}</types>

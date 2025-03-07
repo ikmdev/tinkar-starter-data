@@ -9,8 +9,8 @@
     <version>${data-artifact.version}</version>
     <packaging>pom</packaging>
 
-    <name>${data-artifact.artifactId} Generated From ${project.artifactId}</name>
-	<description>${data-artifact.artifactId} Generated From ${project.artifactId}</description>
+    <name>${data-artifact.artifactId} generated from ${project.artifactId}</name>
+	<description>${data-artifact.artifactId} generated from ${project.artifactId}</description>
 	<url>${project.url}</url>
 
     <licenses>

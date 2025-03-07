@@ -24,9 +24,9 @@
 		<!-- Properties for Ease of Use -->
 		<data-artifact.prefix>${data-artifact.artifactId}-${data-artifact.version}</data-artifact.prefix>
 		<data-artifact.path-prefix>${project.build.directory}/${data-artifact.prefix}</data-artifact.path-prefix>
-		<deploymentFiles>${data-artifact.path-prefix}-unreasoned-sa.zip,${data-artifact.path-prefix}-reasoned-sa.zip,${data-artifact.path-prefix}-unreasoned-pb.zip,${data-artifact.path-prefix}-reasoned-pb.zip</deploymentFiles>
-		<deploymentClassifiers>unreasoned-sa,reasoned-sa,unreasoned-pb,reasoned-pb</deploymentClassifiers>
-		<deploymentTypes>zip,zip,zip,zip</deploymentTypes>
+		<deploymentFiles>${project.basedir}/pom.xml,${data-artifact.path-prefix}-unreasoned-sa.zip,${data-artifact.path-prefix}-reasoned-sa.zip,${data-artifact.path-prefix}-unreasoned-pb.zip,${data-artifact.path-prefix}-reasoned-pb.zip</deploymentFiles>
+		<deploymentClassifiers>pipeline,unreasoned-sa,reasoned-sa,unreasoned-pb,reasoned-pb</deploymentClassifiers>
+		<deploymentTypes>xml,zip,zip,zip,zip</deploymentTypes>
 	</properties>
 
 	<build>
@@ -39,9 +39,21 @@
 					<groupId>${data-artifact.groupId}</groupId>
 					<artifactId>${data-artifact.artifactId}</artifactId>
 					<version>${data-artifact.version}</version>
-					<pomFile>${project.basedir}/pom.xml</pomFile>
+					<pomFile>${project.build.directory}/data-artifact-pom.xml</pomFile>
 				</configuration>
 				<executions>
+					<execution>
+						<id>install-pipeline-definition</id>
+						<phase>install</phase>
+						<goals>
+							<goal>install-file</goal>
+						</goals>
+						<configuration>
+							<file>${project.basedir}/pom.xml</file>
+							<classifier>pipeline</classifier>
+							<packaging>xml</packaging>
+						</configuration>
+					</execution>
 					<execution>
 						<id>install-unreasoned-sa-artifact</id>
 						<phase>install</phase>
@@ -229,30 +241,9 @@
                                     <goal>filter-sources</goal>
                                 </goals>
                                 <configuration>
-                                    <sourceDirectory>${project.basedir}/pom-template</sourceDirectory>
+                                    <sourceDirectory>data-artifact-pom-template</sourceDirectory>
                                     <outputDirectory>${project.build.directory}</outputDirectory>
                                     <skipPoms>false</skipPoms>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>build-helper-maven-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>attach-artifacts</id>
-                                <phase>package</phase>
-                                <goals>
-                                    <goal>attach-artifact</goal>
-                                </goals>
-                                <configuration>
-                                    <artifacts>
-                                        <artifact>
-                                            <file>${project.build.directory}/tinkar-starter-data-pom-template.xml</file>
-                                            <type>xml</type>
-                                        </artifact>
-                                    </artifacts>
                                 </configuration>
                             </execution>
                         </executions>
@@ -286,10 +277,8 @@
 									<groupId>${data-artifact.groupId}</groupId>
 									<artifactId>${data-artifact.artifactId}</artifactId>
 									<version>${data-artifact.version}</version>
-									<generatePom>true</generatePom>
-									<description>${data-artifact.artifactId} self-described generated data</description>
-									<file>${project.basedir}/pom.xml</file>
-									<classifier>pipeline</classifier>
+									<file>${project.build.directory}/data-artifact-pom.xml</file>
+									<packaging>pom</packaging>
 									<files>${deploymentFiles}</files>
 									<classifiers>${deploymentClassifiers}</classifiers>
 									<types>${deploymentTypes}</types>
@@ -326,10 +315,8 @@
 									<groupId>${data-artifact.groupId}</groupId>
 									<artifactId>${data-artifact.artifactId}</artifactId>
 									<version>${data-artifact.version}</version>
-									<generatePom>true</generatePom>
-									<description>${data-artifact.artifactId} self-described generated data</description>
-									<file>${project.basedir}/pom.xml</file>
-									<classifier>pipeline</classifier>
+									<file>${project.build.directory}/data-artifact-pom.xml</file>
+									<packaging>pom</packaging>
 									<files>${deploymentFiles}</files>
 									<classifiers>${deploymentClassifiers}</classifiers>
 									<types>${deploymentTypes}</types>

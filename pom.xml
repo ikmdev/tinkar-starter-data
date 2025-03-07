@@ -69,6 +69,9 @@
         <!-- Properties Definition -->
         <tinkar-starter-data-properties.groupId>dev.ikm.maven.tinkar</tinkar-starter-data-properties.groupId>
         <tinkar-starter-data-properties.artifactId>tinkar-starter-data-properties</tinkar-starter-data-properties.artifactId>
+        <!-- Templating Plugin Version-->
+        <templating-maven-plugin.version>3.0.0</templating-maven-plugin.version>
+        <builder-helper-maven-plugin.version>3.6.0</builder-helper-maven-plugin.version>
     </properties>
 
     <modules>
@@ -216,6 +219,17 @@
                     <groupId>io.github.1tchy</groupId>
                     <artifactId>variable-search-replace-plugin</artifactId>
                     <version>${variable-search-replace-plugin.version}</version>
+                </plugin>
+                <!-- Templating Plugin-->
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>templating-maven-plugin</artifactId>
+                    <version>${templating-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>build-helper-maven-plugin</artifactId>
+                    <version>${builder-helper-maven-plugin.version}</version>
                 </plugin>
             </plugins>
         </pluginManagement>

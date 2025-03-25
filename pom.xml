@@ -6,7 +6,7 @@
     <parent>
         <groupId>dev.ikm.build</groupId>
         <artifactId>java-parent</artifactId>
-        <version>1.55.0</version>
+        <version>1.58.0</version>
     </parent>
 
     <groupId>dev.ikm.maven.tinkar</groupId>
@@ -65,7 +65,7 @@
         <jupiter.version>5.10.0</jupiter.version>
         <!-- Logging dependencies -->
         <log4j.version>3.0.0-alpha1</log4j.version>
-        <slf4j.version>2.0.13</slf4j.version>
+        <slf4j.version>2.0.16</slf4j.version>
         <!-- Properties Definition -->
         <tinkar-starter-data-properties.groupId>dev.ikm.maven.tinkar</tinkar-starter-data-properties.groupId>
         <tinkar-starter-data-properties.artifactId>tinkar-starter-data-properties</tinkar-starter-data-properties.artifactId>

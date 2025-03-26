@@ -111,6 +111,15 @@
 		<profile>
 			<id>generateData</id>
 			<build>
+				<pluginManagement>
+					<plugins>
+						<plugin>
+							<groupId>dev.ikm.maven.tinkar</groupId>
+							<artifactId>tinkar-starter-data-maven-plugin</artifactId>
+							<version>${project.version}</version>
+						</plugin>
+					</plugins>
+				</pluginManagement>
 				<plugins>
 					<plugin>
 						<groupId>dev.ikm.maven.tinkar</groupId>

@@ -183,6 +183,14 @@
         <pluginManagement>
             <plugins>
                 <plugin>
+                    <groupId>dev.ikm</groupId>
+                    <artifactId>gitflow-maven-plugin</artifactId>
+                    <version>${maven.github-flow.version}</version>
+                    <configuration>
+                        <mvnExecutable>./mvnw</mvnExecutable>
+                    </configuration>
+                </plugin>
+                <plugin>
                     <groupId>dev.ikm.maven.tinkar</groupId>
                     <artifactId>tinkar-data-maven-plugin</artifactId>
                     <version>${project.version}</version>

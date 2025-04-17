@@ -8,7 +8,15 @@ import dev.ikm.tinkar.composer.Session;
 import dev.ikm.tinkar.composer.assembler.ConceptAssembler;
 import dev.ikm.tinkar.composer.assembler.PatternAssembler;
 import dev.ikm.tinkar.composer.assembler.SemanticAssembler;
-import dev.ikm.tinkar.composer.template.*;
+import dev.ikm.tinkar.composer.template.Definition;
+import dev.ikm.tinkar.composer.template.FullyQualifiedName;
+import dev.ikm.tinkar.composer.template.Identifier;
+import dev.ikm.tinkar.composer.template.KometBaseModel;
+import dev.ikm.tinkar.composer.template.StatedAxiom;
+import dev.ikm.tinkar.composer.template.StatedNavigation;
+import dev.ikm.tinkar.composer.template.Synonym;
+import dev.ikm.tinkar.composer.template.TinkarBaseModel;
+import dev.ikm.tinkar.composer.template.USDialect;
 import dev.ikm.tinkar.entity.EntityService;
 import dev.ikm.tinkar.terms.EntityProxy;
 import dev.ikm.tinkar.terms.State;
@@ -71,7 +79,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(GB_ENGLISH_DIALECT, US_ENGLISH_DIALECT)
                         .parents(DIALECT_ASSEMBLAGE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DIALECT_ASSEMBLAGE)).attach(new TinkarBaseModel());
+                        .isA(DIALECT_ASSEMBLAGE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(TEXT_COMPARISON_MEASURE_SEMANTIC))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -96,7 +105,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(CASE_INSENSITIVE_EVALUATION, CASE_SENSITIVE_EVALUATION)
                         .parents(MEANING))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(MEANING)).attach(new TinkarBaseModel());
+                        .isA(MEANING))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(STARTER_DATA_AUTHORING))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -120,7 +130,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(USER))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(USER)).attach(new TinkarBaseModel());
+                        .isA(USER))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(AXIOM_SYNTAX))
@@ -145,7 +156,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(TINKAR_MODEL_CONCEPT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(TINKAR_MODEL_CONCEPT)).attach(new TinkarBaseModel());
+                        .isA(TINKAR_MODEL_CONCEPT))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(EXPRESS_AXIOM_SYNTAX))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -169,7 +181,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(AXIOM_SYNTAX))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(AXIOM_SYNTAX)).attach(new TinkarBaseModel());
+                        .isA(AXIOM_SYNTAX))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(ACCEPTABLE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -193,7 +206,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DESCRIPTION_ACCEPTABILITY))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DESCRIPTION_ACCEPTABILITY)).attach(new TinkarBaseModel());
+                        .isA(DESCRIPTION_ACCEPTABILITY))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(ACTIVE_STATE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -217,7 +231,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(STATUS_VALUE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(STATUS_VALUE)).attach(new TinkarBaseModel());
+                        .isA(STATUS_VALUE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(ALLOWED_STATES_FOR_STAMP_COORDINATE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -241,7 +256,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(IMMUTABLECOORDINATE_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(IMMUTABLECOORDINATE_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(IMMUTABLECOORDINATE_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(AND))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -265,7 +281,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(CONNECTIVE_OPERATOR))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(CONNECTIVE_OPERATOR)).attach(new TinkarBaseModel());
+                        .isA(CONNECTIVE_OPERATOR))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(ANNOTATION_TYPE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -290,7 +307,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(COMMENT, KOMET_ISSUE)
                         .parents(ROOT_VERTEX))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(ROOT_VERTEX)).attach(new TinkarBaseModel());
+                        .isA(ROOT_VERTEX))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(ANONYMOUS_CONCEPT))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -314,7 +332,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(CONCEPT_TYPE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(CONCEPT_TYPE)).attach(new TinkarBaseModel());
+                        .isA(CONCEPT_TYPE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(ANY_COMPONENT))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -338,7 +357,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(OBJECT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(OBJECT)).attach(new TinkarBaseModel());
+                        .isA(OBJECT))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(ARRAY))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -362,7 +382,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DYNAMIC_COLUMN_DATA_TYPES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DYNAMIC_COLUMN_DATA_TYPES)).attach(new TinkarBaseModel());
+                        .isA(DYNAMIC_COLUMN_DATA_TYPES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(ARRAY_FIELD))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -386,7 +407,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DISPLAY_FIELDS))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DISPLAY_FIELDS)).attach(new TinkarBaseModel());
+                        .isA(DISPLAY_FIELDS))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(AUTHOR_FOR_EDIT_COORDINATE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -410,7 +432,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(IMMUTABLECOORDINATE_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(IMMUTABLECOORDINATE_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(IMMUTABLECOORDINATE_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(AUTHOR_FOR_VERSION))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -434,7 +457,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(VERSION_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(VERSION_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(VERSION_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(AUTHORS_FOR_STAMP_COORDINATE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -458,7 +482,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(IMMUTABLECOORDINATE_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(IMMUTABLECOORDINATE_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(IMMUTABLECOORDINATE_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(AXIOM_FOCUS))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -482,7 +507,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(COMPONENT_TYPE_FOCUS))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(COMPONENT_TYPE_FOCUS)).attach(new TinkarBaseModel());
+                        .isA(COMPONENT_TYPE_FOCUS))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(AXIOM_ORIGIN))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -507,7 +533,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(STATED_PREMISE_TYPE, INFERRED_PREMISE_TYPE)
                         .parents(TINKAR_MODEL_CONCEPT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(TINKAR_MODEL_CONCEPT)).attach(new TinkarBaseModel());
+                        .isA(TINKAR_MODEL_CONCEPT))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(BOOLEAN_FIELD))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -531,7 +558,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DISPLAY_FIELDS))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DISPLAY_FIELDS)).attach(new TinkarBaseModel());
+                        .isA(DISPLAY_FIELDS))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(BOOLEAN_LITERAL))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -555,7 +583,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(LITERAL_VALUE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(LITERAL_VALUE)).attach(new TinkarBaseModel());
+                        .isA(LITERAL_VALUE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(BOOLEAN_REFERENCE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -579,7 +608,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(QUERY_CLAUSES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(QUERY_CLAUSES)).attach(new TinkarBaseModel());
+                        .isA(QUERY_CLAUSES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(BOOLEAN_SUBSTITUTION))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -603,7 +633,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(FIELD_SUBSTITUTION))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(FIELD_SUBSTITUTION)).attach(new TinkarBaseModel());
+                        .isA(FIELD_SUBSTITUTION))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(BYTE_ARRAY_FIELD))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -627,7 +658,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DISPLAY_FIELDS))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DISPLAY_FIELDS)).attach(new TinkarBaseModel());
+                        .isA(DISPLAY_FIELDS))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(CANCELED_STATE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -651,7 +683,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(STATUS_VALUE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(STATUS_VALUE)).attach(new TinkarBaseModel());
+                        .isA(STATUS_VALUE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(CASE_INSENSITIVE_EVALUATION))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -675,7 +708,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(TEXT_COMPARISON_MEASURE_SEMANTIC))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(TEXT_COMPARISON_MEASURE_SEMANTIC)).attach(new TinkarBaseModel());
+                        .isA(TEXT_COMPARISON_MEASURE_SEMANTIC))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(CASE_SENSITIVE_EVALUATION))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -699,7 +733,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(TEXT_COMPARISON_MEASURE_SEMANTIC))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(TEXT_COMPARISON_MEASURE_SEMANTIC)).attach(new TinkarBaseModel());
+                        .isA(TEXT_COMPARISON_MEASURE_SEMANTIC))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(CASE_SIGNIFICANCE_CONCEPT_NID_FOR_DESCRIPTION))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -723,7 +758,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DESCRIPTION_VERSION_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DESCRIPTION_VERSION_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(DESCRIPTION_VERSION_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(CHINESE_LANGUAGE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -747,7 +783,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(LANGUAGE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(LANGUAGE)).attach(new TinkarBaseModel());
+                        .isA(LANGUAGE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(CHRONICLE_PROPERTIES))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -772,7 +809,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(PRIMORDIAL_UUID_FOR_CHRONICLE, VERSION_LIST_FOR_CHRONICLE, SEMANTIC_LIST_FOR_CHRONICLE, UUID_LIST_FOR_COMPONENT)
                         .parents(OBJECT_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(OBJECT_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(OBJECT_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(COMMENT))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -796,7 +834,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(ANNOTATION_TYPE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(ANNOTATION_TYPE)).attach(new TinkarBaseModel());
+                        .isA(ANNOTATION_TYPE))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(COMPONENT_ID_LIST_FIELD))
@@ -821,7 +860,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DISPLAY_FIELDS))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DISPLAY_FIELDS)).attach(new TinkarBaseModel());
+                        .isA(DISPLAY_FIELDS))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(COMPONENT_ID_SET_FIELD))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -845,7 +885,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DISPLAY_FIELDS))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DISPLAY_FIELDS)).attach(new TinkarBaseModel());
+                        .isA(DISPLAY_FIELDS))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(COMPONENT_FIELD))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -869,7 +910,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DISPLAY_FIELDS))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DISPLAY_FIELDS)).attach(new TinkarBaseModel());
+                        .isA(DISPLAY_FIELDS))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(COMPONENT_FOR_SEMANTIC))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -893,7 +935,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(SEMANTIC_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(SEMANTIC_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(SEMANTIC_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(COMPONENT_SEMANTIC))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -917,7 +960,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(SEMANTIC_TYPE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(SEMANTIC_TYPE)).attach(new TinkarBaseModel());
+                        .isA(SEMANTIC_TYPE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(COMPONENT_TYPE_FOCUS))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -942,7 +986,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(AXIOM_FOCUS, CONCEPT_FOCUS, DESCRIPTION_FOCUS)
                         .parents(TINKAR_MODEL_CONCEPT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(TINKAR_MODEL_CONCEPT)).attach(new TinkarBaseModel());
+                        .isA(TINKAR_MODEL_CONCEPT))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(CONCEPT_CONSTRAINTS))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -966,7 +1011,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(ACTION_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(ACTION_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(ACTION_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(CONCEPT_DETAILS_TREE_TABLE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -990,7 +1036,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(TINKAR_MODEL_CONCEPT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(TINKAR_MODEL_CONCEPT)).attach(new TinkarBaseModel());
+                        .isA(TINKAR_MODEL_CONCEPT))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(CONCEPT_FIELD))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -1014,7 +1061,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DISPLAY_FIELDS))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DISPLAY_FIELDS)).attach(new TinkarBaseModel());
+                        .isA(DISPLAY_FIELDS))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(CONCEPT_FOCUS))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -1038,7 +1086,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(COMPONENT_TYPE_FOCUS))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(COMPONENT_TYPE_FOCUS)).attach(new TinkarBaseModel());
+                        .isA(COMPONENT_TYPE_FOCUS))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(CONCEPT_REFERENCE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -1062,7 +1111,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(CONNECTIVE_OPERATOR))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(CONNECTIVE_OPERATOR)).attach(new TinkarBaseModel());
+                        .isA(CONNECTIVE_OPERATOR))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(CONCEPT_SEMANTIC))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -1086,7 +1136,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(SEMANTIC_TYPE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(SEMANTIC_TYPE)).attach(new TinkarBaseModel());
+                        .isA(SEMANTIC_TYPE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(CONCEPT_SUBSTITUTION))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -1110,7 +1161,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(FIELD_SUBSTITUTION))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(FIELD_SUBSTITUTION)).attach(new TinkarBaseModel());
+                        .isA(FIELD_SUBSTITUTION))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(CONCEPT_TO_FIND))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -1134,7 +1186,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(ACTION_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(ACTION_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(ACTION_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(CONCEPT_TYPE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -1159,7 +1212,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(ANONYMOUS_CONCEPT, PATH_CONCEPT, SEMANTIC_FIELD_CONCEPTS)
                         .parents(TINKAR_MODEL_CONCEPT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(TINKAR_MODEL_CONCEPT)).attach(new TinkarBaseModel());
+                        .isA(TINKAR_MODEL_CONCEPT))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(CONCEPT_VERSION))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -1183,7 +1237,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(TINKAR_MODEL_CONCEPT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(TINKAR_MODEL_CONCEPT)).attach(new TinkarBaseModel());
+                        .isA(TINKAR_MODEL_CONCEPT))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(CONCRETE_DOMAIN_OPERATOR))
@@ -1209,7 +1264,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(EQUAL_TO, GREATER_THAN, GREATER_THAN_OR_EQUAL_TO, LESS_THAN, LESS_THAN_OR_EQUAL_TO, MAXIMUM_VALUE_OPERATOR, MINIMUM_VALUE_OPERATOR)
                         .parents(TINKAR_MODEL_CONCEPT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(TINKAR_MODEL_CONCEPT)).attach(new TinkarBaseModel());
+                        .isA(TINKAR_MODEL_CONCEPT))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(CONDITIONAL_TRIGGERS))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -1233,7 +1289,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(ACTION_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(ACTION_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(ACTION_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(CONNECTIVE_OPERATOR))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -1258,7 +1315,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(AND, DEFINITION_ROOT, DISJOINT_WITH, OR, IS_A, PART_OF, CONCEPT_REFERENCE)
                         .parents(MEANING))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(MEANING)).attach(new TinkarBaseModel());
+                        .isA(MEANING))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(CORELATION_EXPRESSION))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -1282,7 +1340,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(CORRELATION_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(CORRELATION_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(CORRELATION_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(CORELATION_REFERENCE_EXPRESSION))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -1306,7 +1365,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(CORRELATION_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(CORRELATION_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(CORRELATION_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(CORRELATION_PROPERTIES))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -1331,7 +1391,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(CORELATION_EXPRESSION, CORELATION_REFERENCE_EXPRESSION)
                         .parents(OBJECT_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(OBJECT_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(OBJECT_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(CREATIVE_COMMONS_BY_LICENSE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -1355,7 +1416,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(ROOT_VERTEX))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(ROOT_VERTEX)).attach(new TinkarBaseModel());
+                        .isA(ROOT_VERTEX))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(CZECH_DIALECT))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -1379,7 +1441,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DIALECT_ASSEMBLAGE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DIALECT_ASSEMBLAGE)).attach(new TinkarBaseModel());
+                        .isA(DIALECT_ASSEMBLAGE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(CZECH_LANGUAGE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -1403,7 +1466,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(LANGUAGE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(LANGUAGE)).attach(new TinkarBaseModel());
+                        .isA(LANGUAGE))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(DANISH_LANGUAGE))
@@ -1428,7 +1492,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(LANGUAGE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(LANGUAGE)).attach(new TinkarBaseModel());
+                        .isA(LANGUAGE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(DEFAULT_MODULE_FOR_EDIT_COORDINATE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -1452,7 +1517,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(IMMUTABLECOORDINATE_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(IMMUTABLECOORDINATE_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(IMMUTABLECOORDINATE_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(DEFINITION_DESCRIPTION_TYPE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -1476,7 +1542,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DESCRIPTION_TYPE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DESCRIPTION_TYPE)).attach(new TinkarBaseModel());
+                        .isA(DESCRIPTION_TYPE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(DEFINITION_ROOT))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -1500,7 +1567,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(CONNECTIVE_OPERATOR))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(CONNECTIVE_OPERATOR)).attach(new TinkarBaseModel());
+                        .isA(CONNECTIVE_OPERATOR))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(DESCRIPTION))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -1524,7 +1592,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(TINKAR_MODEL_CONCEPT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(TINKAR_MODEL_CONCEPT)).attach(new TinkarBaseModel());
+                        .isA(TINKAR_MODEL_CONCEPT))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(DESCRIPTION_ACCEPTABILITY))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -1549,7 +1618,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(ACCEPTABLE, PREFERRED)
                         .parents(TINKAR_MODEL_CONCEPT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(TINKAR_MODEL_CONCEPT)).attach(new TinkarBaseModel());
+                        .isA(TINKAR_MODEL_CONCEPT))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(DESCRIPTION_CASE_SENSITIVE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -1573,7 +1643,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DESCRIPTION_CASE_SIGNIFICANCE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DESCRIPTION_CASE_SIGNIFICANCE)).attach(new TinkarBaseModel());
+                        .isA(DESCRIPTION_CASE_SIGNIFICANCE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(DESCRIPTION_CASE_SIGNIFICANCE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -1598,7 +1669,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(DESCRIPTION_CASE_SENSITIVE, DESCRIPTION_NOT_CASE_SENSITIVE)
                         .parents(TINKAR_MODEL_CONCEPT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(TINKAR_MODEL_CONCEPT)).attach(new TinkarBaseModel());
+                        .isA(TINKAR_MODEL_CONCEPT))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(DESCRIPTION_CORE_TYPE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -1622,7 +1694,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DESCRIPTION_TYPE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DESCRIPTION_TYPE)).attach(new TinkarBaseModel());
+                        .isA(DESCRIPTION_TYPE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(DESCRIPTION_DIALECT_PAIR))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -1647,7 +1720,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(DESCRIPTION_FOR_DIALECT_AND_OR_DESCRIPTION_PAIR, DIALECT_FOR_DIALECT_AND_OR_DESCRIPTION_PAIR)
                         .parents(DESCRIPTION_VERSION_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DESCRIPTION_VERSION_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(DESCRIPTION_VERSION_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(DESCRIPTION_FOCUS))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -1671,7 +1745,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(COMPONENT_TYPE_FOCUS))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(COMPONENT_TYPE_FOCUS)).attach(new TinkarBaseModel());
+                        .isA(COMPONENT_TYPE_FOCUS))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(DESCRIPTION_FOR_DIALECT_AND_OR_DESCRIPTION_PAIR))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -1695,7 +1770,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DESCRIPTION_DIALECT_PAIR))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DESCRIPTION_DIALECT_PAIR)).attach(new TinkarBaseModel());
+                        .isA(DESCRIPTION_DIALECT_PAIR))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(DESCRIPTION_INITIAL_CHARACTER_CASE_SENSITIVE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -1719,7 +1795,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DESCRIPTION_CASE_SIGNIFICANCE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DESCRIPTION_CASE_SIGNIFICANCE)).attach(new TinkarBaseModel());
+                        .isA(DESCRIPTION_CASE_SIGNIFICANCE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(DESCRIPTION_LOGIC_PROFILE_FOR_LOGIC_COORDINATE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -1743,7 +1820,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(IMMUTABLECOORDINATE_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(IMMUTABLECOORDINATE_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(IMMUTABLECOORDINATE_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(DESCRIPTION_NOT_CASE_SENSITIVE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -1767,7 +1845,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DESCRIPTION_CASE_SIGNIFICANCE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DESCRIPTION_CASE_SIGNIFICANCE)).attach(new TinkarBaseModel());
+                        .isA(DESCRIPTION_CASE_SIGNIFICANCE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(DESCRIPTION_SEMANTIC))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -1791,7 +1870,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(TINKAR_MODEL_CONCEPT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(TINKAR_MODEL_CONCEPT)).attach(new TinkarBaseModel());
+                        .isA(TINKAR_MODEL_CONCEPT))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(DESCRIPTION_TYPE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -1816,7 +1896,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(DEFINITION_DESCRIPTION_TYPE, FULLY_QUALIFIED_NAME_DESCRIPTION_TYPE, REGULAR_NAME_DESCRIPTION_TYPE)
                         .parents(TINKAR_MODEL_CONCEPT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(TINKAR_MODEL_CONCEPT)).attach(new TinkarBaseModel());
+                        .isA(TINKAR_MODEL_CONCEPT))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(DESCRIPTION_TYPE_FOR_DESCRIPTION))
@@ -1841,7 +1922,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DESCRIPTION_VERSION_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DESCRIPTION_VERSION_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(DESCRIPTION_VERSION_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(DESCRIPTION_TYPE_PREFERENCE_LIST_FOR_LANGUAGE_COORDINATE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -1865,7 +1947,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(IMMUTABLECOORDINATE_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(IMMUTABLECOORDINATE_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(IMMUTABLECOORDINATE_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(DESCRIPTION_VERSION_PROPERTIES))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -1890,7 +1973,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(CASE_SIGNIFICANCE_CONCEPT_NID_FOR_DESCRIPTION, DESCRIPTION_TYPE_FOR_DESCRIPTION, LANGUAGE_CONCEPT_NID_FOR_DESCRIPTION, DESCRIPTION_DIALECT_PAIR)
                         .parents(VERSION_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(VERSION_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(VERSION_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(DESCRIPTION_LOGIC_PROFILE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -1915,7 +1999,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(EL_PLUS_PLUS_PROFILE)
                         .parents(TINKAR_MODEL_CONCEPT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(TINKAR_MODEL_CONCEPT)).attach(new TinkarBaseModel());
+                        .isA(TINKAR_MODEL_CONCEPT))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(DESTINATION_MODULE_FOR_EDIT_COORDINATE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -1939,7 +2024,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(IMMUTABLECOORDINATE_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(IMMUTABLECOORDINATE_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(IMMUTABLECOORDINATE_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(DEVELOPMENT_MODULE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -1963,7 +2049,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(MODULE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(MODULE)).attach(new TinkarBaseModel());
+                        .isA(MODULE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(DEVELOPMENT_PATH))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -1987,7 +2074,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(PATH))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(PATH)).attach(new TinkarBaseModel());
+                        .isA(PATH))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(DIGRAPH_FIELD))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -2011,7 +2099,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DISPLAY_FIELDS))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DISPLAY_FIELDS)).attach(new TinkarBaseModel());
+                        .isA(DISPLAY_FIELDS))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(DITREE_FIELD))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -2035,7 +2124,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DISPLAY_FIELDS))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DISPLAY_FIELDS)).attach(new TinkarBaseModel());
+                        .isA(DISPLAY_FIELDS))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(DIALECT_FOR_DIALECT_AND_OR_DESCRIPTION_PAIR))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -2059,7 +2149,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DESCRIPTION_DIALECT_PAIR))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DESCRIPTION_DIALECT_PAIR)).attach(new TinkarBaseModel());
+                        .isA(DESCRIPTION_DIALECT_PAIR))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(DIGRAPH_FOR_LOGIC_COORDINATE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -2083,7 +2174,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(IMMUTABLECOORDINATE_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(IMMUTABLECOORDINATE_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(IMMUTABLECOORDINATE_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(DIRECTED_GRAPH))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -2108,7 +2200,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(EL_PLUS_PLUS_DIGRAPH)
                         .parents(TINKAR_MODEL_CONCEPT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(TINKAR_MODEL_CONCEPT)).attach(new TinkarBaseModel());
+                        .isA(TINKAR_MODEL_CONCEPT))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(DISJOINT_WITH))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -2132,7 +2225,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(CONNECTIVE_OPERATOR))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(CONNECTIVE_OPERATOR)).attach(new TinkarBaseModel());
+                        .isA(CONNECTIVE_OPERATOR))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(DISPLAY_FIELDS))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -2157,7 +2251,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(COMPONENT_FIELD, COMPONENT_ID_LIST_FIELD, COMPONENT_ID_SET_FIELD, CONCEPT_FIELD, DIGRAPH_FIELD, DITREE_FIELD, FLOAT_FIELD, INTEGER_FIELD, SEMANTIC_FIELD_TYPE, STRING, DECIMAL_FIELD)
                         .parents(TINKAR_MODEL_CONCEPT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(TINKAR_MODEL_CONCEPT)).attach(new TinkarBaseModel());
+                        .isA(TINKAR_MODEL_CONCEPT))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(DOUBLE_FIELD))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -2181,7 +2276,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DISPLAY_FIELDS))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DISPLAY_FIELDS)).attach(new TinkarBaseModel());
+                        .isA(DISPLAY_FIELDS))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(DUTCH_LANGUAGE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -2205,7 +2301,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(LANGUAGE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(LANGUAGE)).attach(new TinkarBaseModel());
+                        .isA(LANGUAGE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(EL_PROFILE_SET_OPERATOR))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -2230,7 +2327,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(NECESSARY_SET, SUFFICIENT_SET)
                         .parents(MEANING))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(MEANING)).attach(new TinkarBaseModel());
+                        .isA(MEANING))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(EL_PLUS_PLUS_TERMINOLOGICAL_AXIOMS))
@@ -2256,7 +2354,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(EL_PLUS_PLUS_INFERRED_TERMINOLOGICAL_AXIOMS, EL_PLUS_PLUS_STATED_TERMINOLOGICAL_AXIOMS)
                         .parents(TINKAR_MODEL_CONCEPT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(TINKAR_MODEL_CONCEPT)).attach(new TinkarBaseModel());
+                        .isA(TINKAR_MODEL_CONCEPT))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(EL_PLUS_PLUS_INFERRED_CONCEPT_DEFINITION))
@@ -2281,7 +2380,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(LOGICAL_DEFINITION))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(LOGICAL_DEFINITION)).attach(new TinkarBaseModel());
+                        .isA(LOGICAL_DEFINITION))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(EL_PLUS_PLUS_INFERRED_TERMINOLOGICAL_AXIOMS))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -2306,7 +2406,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(NECESSARY_SET, SUFFICIENT_SET, INCLUSION_SET, TinkarTerm.ROLE, ROLE_GROUP)
                         .parents(EL_PLUS_PLUS_TERMINOLOGICAL_AXIOMS))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(EL_PLUS_PLUS_TERMINOLOGICAL_AXIOMS)).attach(new TinkarBaseModel());
+                        .isA(EL_PLUS_PLUS_TERMINOLOGICAL_AXIOMS))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(EL_PLUS_PLUS_STATED_CONCEPT_DEFINITION))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -2330,7 +2431,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(LOGICAL_DEFINITION))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(LOGICAL_DEFINITION)).attach(new TinkarBaseModel());
+                        .isA(LOGICAL_DEFINITION))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(EL_PLUS_PLUS_STATED_TERMINOLOGICAL_AXIOMS))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -2355,7 +2457,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(NECESSARY_SET, SUFFICIENT_SET, INCLUSION_SET, TinkarTerm.ROLE, ROLE_GROUP)
                         .parents(EL_PLUS_PLUS_TERMINOLOGICAL_AXIOMS))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(EL_PLUS_PLUS_TERMINOLOGICAL_AXIOMS)).attach(new TinkarBaseModel());
+                        .isA(EL_PLUS_PLUS_TERMINOLOGICAL_AXIOMS))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(EL_PLUS_PLUS_DIGRAPH))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -2379,7 +2482,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DIRECTED_GRAPH))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DIRECTED_GRAPH)).attach(new TinkarBaseModel());
+                        .isA(DIRECTED_GRAPH))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(EL_PLUS_PLUS_PROFILE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -2403,7 +2507,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DESCRIPTION_LOGIC_PROFILE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DESCRIPTION_LOGIC_PROFILE)).attach(new TinkarBaseModel());
+                        .isA(DESCRIPTION_LOGIC_PROFILE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(ENGLISH_LANGUAGE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -2427,7 +2532,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(LANGUAGE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(LANGUAGE)).attach(new TinkarBaseModel());
+                        .isA(LANGUAGE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(EQUAL_TO))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -2451,7 +2557,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(CONCRETE_DOMAIN_OPERATOR))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(CONCRETE_DOMAIN_OPERATOR)).attach(new TinkarBaseModel());
+                        .isA(CONCRETE_DOMAIN_OPERATOR))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(EXACT))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -2475,7 +2582,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(GROUPING))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(GROUPING)).attach(new TinkarBaseModel());
+                        .isA(GROUPING))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(EXTENDED_DESCRIPTION_TYPE))
@@ -2500,7 +2608,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DESCRIPTION_TYPE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DESCRIPTION_TYPE)).attach(new TinkarBaseModel());
+                        .isA(DESCRIPTION_TYPE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(EXTENDED_RELATIONSHIP_TYPE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -2524,7 +2633,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DESCRIPTION_TYPE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DESCRIPTION_TYPE)).attach(new TinkarBaseModel());
+                        .isA(DESCRIPTION_TYPE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(DECIMAL_FIELD))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -2548,7 +2658,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DISPLAY_FIELDS))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DISPLAY_FIELDS)).attach(new TinkarBaseModel());
+                        .isA(DISPLAY_FIELDS))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(FLOAT_FIELD))
@@ -2573,7 +2684,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DISPLAY_FIELDS))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DISPLAY_FIELDS)).attach(new TinkarBaseModel());
+                        .isA(DISPLAY_FIELDS))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(FLOAT_LITERAL))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -2597,7 +2709,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(LITERAL_VALUE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(LITERAL_VALUE)).attach(new TinkarBaseModel());
+                        .isA(LITERAL_VALUE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(FLOAT_SUBSTITUTION))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -2621,7 +2734,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(FIELD_SUBSTITUTION))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(FIELD_SUBSTITUTION)).attach(new TinkarBaseModel());
+                        .isA(FIELD_SUBSTITUTION))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(FRENCH_DIALECT))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -2645,7 +2759,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DIALECT_ASSEMBLAGE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DIALECT_ASSEMBLAGE)).attach(new TinkarBaseModel());
+                        .isA(DIALECT_ASSEMBLAGE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(FRENCH_LANGUAGE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -2669,7 +2784,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(LANGUAGE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(LANGUAGE)).attach(new TinkarBaseModel());
+                        .isA(LANGUAGE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(FULLY_QUALIFIED_NAME_DESCRIPTION_TYPE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -2693,7 +2809,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DESCRIPTION_TYPE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DESCRIPTION_TYPE)).attach(new TinkarBaseModel());
+                        .isA(DESCRIPTION_TYPE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(GB_ENGLISH_DIALECT))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -2717,7 +2834,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(ENGLISH_DIALECT_ASSEMBLAGE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(ENGLISH_DIALECT_ASSEMBLAGE)).attach(new TinkarBaseModel());
+                        .isA(ENGLISH_DIALECT_ASSEMBLAGE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(GERMAN_LANGUAGE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -2741,7 +2859,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(LANGUAGE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(LANGUAGE)).attach(new TinkarBaseModel());
+                        .isA(LANGUAGE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(GREATER_THAN))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -2765,7 +2884,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(CONCRETE_DOMAIN_OPERATOR))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(CONCRETE_DOMAIN_OPERATOR)).attach(new TinkarBaseModel());
+                        .isA(CONCRETE_DOMAIN_OPERATOR))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(GREATER_THAN_OR_EQUAL_TO))
@@ -2790,7 +2910,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(CONCRETE_DOMAIN_OPERATOR))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(CONCRETE_DOMAIN_OPERATOR)).attach(new TinkarBaseModel());
+                        .isA(CONCRETE_DOMAIN_OPERATOR))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(GROUPING))
@@ -2816,7 +2937,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(EXACT, PARTIAL)
                         .parents(TINKAR_MODEL_CONCEPT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(TINKAR_MODEL_CONCEPT)).attach(new TinkarBaseModel());
+                        .isA(TINKAR_MODEL_CONCEPT))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(HEALTH_CONCEPT))
@@ -2841,7 +2963,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(ROOT_VERTEX))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(ROOT_VERTEX)).attach(new TinkarBaseModel());
+                        .isA(ROOT_VERTEX))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(IDENTIFIER_SOURCE))
@@ -2867,7 +2990,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(UNIVERSALLY_UNIQUE_IDENTIFIER)
                         .parents(TINKAR_MODEL_CONCEPT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(TINKAR_MODEL_CONCEPT)).attach(new TinkarBaseModel());
+                        .isA(TINKAR_MODEL_CONCEPT))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(INCLUSION_SET))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -2891,7 +3015,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(EL_PLUS_PLUS_INFERRED_TERMINOLOGICAL_AXIOMS, EL_PLUS_PLUS_STATED_TERMINOLOGICAL_AXIOMS))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(EL_PLUS_PLUS_INFERRED_TERMINOLOGICAL_AXIOMS, EL_PLUS_PLUS_STATED_TERMINOLOGICAL_AXIOMS)).attach(new TinkarBaseModel());
+                        .isA(EL_PLUS_PLUS_INFERRED_TERMINOLOGICAL_AXIOMS, EL_PLUS_PLUS_STATED_TERMINOLOGICAL_AXIOMS))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(INACTIVE_STATE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -2915,7 +3040,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(STATUS_VALUE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(STATUS_VALUE)).attach(new TinkarBaseModel());
+                        .isA(STATUS_VALUE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(INFERRED_PREMISE_TYPE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -2939,7 +3065,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(AXIOM_ORIGIN))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(AXIOM_ORIGIN)).attach(new TinkarBaseModel());
+                        .isA(AXIOM_ORIGIN))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(INSTANT_LITERAL))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -2963,7 +3090,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(LITERAL_VALUE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(LITERAL_VALUE)).attach(new TinkarBaseModel());
+                        .isA(LITERAL_VALUE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(INSTANT_SUBSTITUTION))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -2987,7 +3115,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(FIELD_SUBSTITUTION))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(FIELD_SUBSTITUTION)).attach(new TinkarBaseModel());
+                        .isA(FIELD_SUBSTITUTION))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(INTEGER_FIELD))
@@ -3012,7 +3141,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DISPLAY_FIELDS))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DISPLAY_FIELDS)).attach(new TinkarBaseModel());
+                        .isA(DISPLAY_FIELDS))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(INVERSE_NAME))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -3036,7 +3166,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DESCRIPTION_TYPE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DESCRIPTION_TYPE)).attach(new TinkarBaseModel());
+                        .isA(DESCRIPTION_TYPE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(INVERSE_TREE_LIST))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -3060,7 +3191,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(TREE_AMALGAM_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(TREE_AMALGAM_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(TREE_AMALGAM_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(IRISH_DIALECT))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -3084,7 +3216,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DIALECT_ASSEMBLAGE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DIALECT_ASSEMBLAGE)).attach(new TinkarBaseModel());
+                        .isA(DIALECT_ASSEMBLAGE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(IRISH_LANGUAGE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -3108,7 +3241,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(LANGUAGE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(LANGUAGE)).attach(new TinkarBaseModel());
+                        .isA(LANGUAGE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(IS_A))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -3132,7 +3266,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(TINKAR_MODEL_CONCEPT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(TINKAR_MODEL_CONCEPT)).attach(new TinkarBaseModel());
+                        .isA(TINKAR_MODEL_CONCEPT))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(IS_A_INFERRED_NAVIGATION))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -3156,7 +3291,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(NAVIGATION))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(NAVIGATION)).attach(new TinkarBaseModel());
+                        .isA(NAVIGATION))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(IS_A_STATED_NAVIGATION))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -3180,7 +3316,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(NAVIGATION))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(NAVIGATION)).attach(new TinkarBaseModel());
+                        .isA(NAVIGATION))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(ITALIAN_LANGUAGE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -3204,7 +3341,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(LANGUAGE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(LANGUAGE)).attach(new TinkarBaseModel());
+                        .isA(LANGUAGE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(KOMET_MODULE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -3228,7 +3366,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(MODULE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(MODULE)).attach(new TinkarBaseModel());
+                        .isA(MODULE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(KOMET_USER))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -3252,7 +3391,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(USER))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(USER)).attach(new TinkarBaseModel());
+                        .isA(USER))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(KOMET_USER_LIST))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -3276,7 +3416,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(USER))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(USER)).attach(new TinkarBaseModel());
+                        .isA(USER))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(KOMET_ISSUE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -3300,7 +3441,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(ANNOTATION_TYPE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(ANNOTATION_TYPE)).attach(new TinkarBaseModel());
+                        .isA(ANNOTATION_TYPE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(KOREAN_DIALECT))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -3325,7 +3467,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(STANDARD_KOREAN_DIALECT)
                         .parents(DIALECT_ASSEMBLAGE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DIALECT_ASSEMBLAGE)).attach(new TinkarBaseModel());
+                        .isA(DIALECT_ASSEMBLAGE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(KOREAN_LANGUAGE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -3349,7 +3492,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(LANGUAGE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(LANGUAGE)).attach(new TinkarBaseModel());
+                        .isA(LANGUAGE))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(LANGUAGE))
@@ -3375,7 +3519,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(ENGLISH_LANGUAGE, SPANISH_LANGUAGE)
                         .parents(TINKAR_MODEL_CONCEPT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(TINKAR_MODEL_CONCEPT)).attach(new TinkarBaseModel());
+                        .isA(TINKAR_MODEL_CONCEPT))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(LANGUAGE_CONCEPT_NID_FOR_DESCRIPTION))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -3399,7 +3544,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DESCRIPTION_VERSION_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DESCRIPTION_VERSION_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(DESCRIPTION_VERSION_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(LANGUAGE_COORDINATE_NAME))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -3423,7 +3569,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(LANGUAGE_COORDINATE_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(LANGUAGE_COORDINATE_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(LANGUAGE_COORDINATE_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(LANGUAGE_COORDINATE_PROPERTIES))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -3448,7 +3595,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(LANGUAGE_COORDINATE_NAME, DIALECT_ASSEMBLAGE_PREFERENCE_LIST_FOR_LANGUAGE_COORDINATE)
                         .parents(OBJECT_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(OBJECT_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(OBJECT_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(LANGUAGE_NID_FOR_LANGUAGE_COORDINATE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -3472,7 +3620,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(IMMUTABLECOORDINATE_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(IMMUTABLECOORDINATE_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(IMMUTABLECOORDINATE_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(LANGUAGE_SPECIFICATION_FOR_LANGUAGE_COORDINATE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -3496,7 +3645,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(IMMUTABLECOORDINATE_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(IMMUTABLECOORDINATE_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(IMMUTABLECOORDINATE_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(LESS_THAN))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -3520,7 +3670,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(CONCRETE_DOMAIN_OPERATOR))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(CONCRETE_DOMAIN_OPERATOR)).attach(new TinkarBaseModel());
+                        .isA(CONCRETE_DOMAIN_OPERATOR))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(LESS_THAN_OR_EQUAL_TO))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -3544,7 +3695,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(CONCRETE_DOMAIN_OPERATOR))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(CONCRETE_DOMAIN_OPERATOR)).attach(new TinkarBaseModel());
+                        .isA(CONCRETE_DOMAIN_OPERATOR))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(LITHUANIAN_LANGUAGE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -3568,7 +3720,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(LANGUAGE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(LANGUAGE)).attach(new TinkarBaseModel());
+                        .isA(LANGUAGE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(LOGIC_COORDINATE_NAME))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -3592,7 +3745,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(LOGIC_COORDINATE_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(LOGIC_COORDINATE_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(LOGIC_COORDINATE_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(LOGIC_COORDINATE_PROPERTIES))
@@ -3618,7 +3772,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(LOGIC_COORDINATE_NAME)
                         .parents(OBJECT_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(OBJECT_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(OBJECT_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(LOGICAL_DEFINITION))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -3642,7 +3797,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(TINKAR_MODEL_CONCEPT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(TINKAR_MODEL_CONCEPT)).attach(new TinkarBaseModel());
+                        .isA(TINKAR_MODEL_CONCEPT))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(LOGICAL_EXPRESSION_FIELD))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -3666,7 +3822,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DISPLAY_FIELDS))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DISPLAY_FIELDS)).attach(new TinkarBaseModel());
+                        .isA(DISPLAY_FIELDS))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(LOGICAL_EXPRESSION_SEMANTIC))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -3690,7 +3847,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(SEMANTIC_TYPE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(SEMANTIC_TYPE)).attach(new TinkarBaseModel());
+                        .isA(SEMANTIC_TYPE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(LOGICALLY_EQUIVALENT_TO))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -3714,7 +3872,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(TAXONOMY_OPERATOR))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(TAXONOMY_OPERATOR)).attach(new TinkarBaseModel());
+                        .isA(TAXONOMY_OPERATOR))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(MASTER_PATH))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -3738,7 +3897,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(PATH))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(PATH)).attach(new TinkarBaseModel());
+                        .isA(PATH))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(MEANING))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -3762,7 +3922,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(TINKAR_MODEL_CONCEPT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(TINKAR_MODEL_CONCEPT)).attach(new TinkarBaseModel());
+                        .isA(TINKAR_MODEL_CONCEPT))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(MEMBERSHIP_SEMANTIC))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -3786,7 +3947,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(SEMANTIC_TYPE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(SEMANTIC_TYPE)).attach(new TinkarBaseModel());
+                        .isA(SEMANTIC_TYPE))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(MODEL_CONCEPT))
@@ -3812,7 +3974,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(TINKAR_MODEL_CONCEPT)
                         .parents(ROOT_VERTEX))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(ROOT_VERTEX)).attach(new TinkarBaseModel());
+                        .isA(ROOT_VERTEX))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(TINKAR_MODEL_CONCEPT))
@@ -3845,7 +4008,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                                 VALUE_CONSTRAINT_SOURCE, AXIOM_SYNTAX)
                         .parents(MODEL_CONCEPT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(MODEL_CONCEPT)).attach(new TinkarBaseModel());
+                        .isA(MODEL_CONCEPT))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(MODULE))
@@ -3871,7 +4035,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(PRIMORDIAL_MODULE)
                         .parents(ROOT_VERTEX))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(ROOT_VERTEX)).attach(new TinkarBaseModel());
+                        .isA(ROOT_VERTEX))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(MODULE_EXCLUSION_SET_FOR_STAMP_COORDINATE))
@@ -3896,7 +4061,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(IMMUTABLECOORDINATE_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(IMMUTABLECOORDINATE_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(IMMUTABLECOORDINATE_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(MODULE_FOR_USER))
@@ -3921,7 +4087,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(USER))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(USER)).attach(new TinkarBaseModel());
+                        .isA(USER))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(MODULE_FOR_VERSION))
@@ -3946,7 +4113,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(VERSION_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(VERSION_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(VERSION_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(MODULE_OPTIONS_FOR_EDIT_COORDINATE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -3970,7 +4138,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(IMMUTABLECOORDINATE_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(IMMUTABLECOORDINATE_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(IMMUTABLECOORDINATE_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(MODULE_PREFERENCE_LIST_FOR_STAMP_COORDINATE))
@@ -3995,7 +4164,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(IMMUTABLECOORDINATE_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(IMMUTABLECOORDINATE_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(IMMUTABLECOORDINATE_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(MODULE_PREFERENCE_LIST_FOR_LANGUAGE_COORDINATE))
@@ -4020,7 +4190,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(IMMUTABLECOORDINATE_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(IMMUTABLECOORDINATE_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(IMMUTABLECOORDINATE_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(MODULE_PREFERENCE_ORDER_FOR_STAMP_COORDINATE))
@@ -4045,7 +4216,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(IMMUTABLECOORDINATE_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(IMMUTABLECOORDINATE_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(IMMUTABLECOORDINATE_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(MODULES_FOR_STAMP_COORDINATE))
@@ -4070,7 +4242,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(IMMUTABLECOORDINATE_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(IMMUTABLECOORDINATE_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(IMMUTABLECOORDINATE_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(NAVIGATION))
@@ -4096,7 +4269,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(NAVIGATION_CONCEPT_SET, NAVIGATION_VERTEX)
                         .parents(PURPOSE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(PURPOSE)).attach(new TinkarBaseModel());
+                        .isA(PURPOSE))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(NAVIGATION_CONCEPT_SET))
@@ -4121,7 +4295,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(NAVIGATION))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(NAVIGATION)).attach(new TinkarBaseModel());
+                        .isA(NAVIGATION))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(NAVIGATION_VERTEX))
@@ -4146,7 +4321,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(NAVIGATION))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(NAVIGATION)).attach(new TinkarBaseModel());
+                        .isA(NAVIGATION))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(NECESSARY_BUT_NOT_SUFFICIENT_CONCEPT_DEFINITION))
@@ -4171,7 +4347,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(EL_PLUS_PLUS_STATED_TERMINOLOGICAL_AXIOMS, EL_PLUS_PLUS_INFERRED_TERMINOLOGICAL_AXIOMS))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(EL_PLUS_PLUS_STATED_TERMINOLOGICAL_AXIOMS, EL_PLUS_PLUS_INFERRED_TERMINOLOGICAL_AXIOMS)).attach(new TinkarBaseModel());
+                        .isA(EL_PLUS_PLUS_STATED_TERMINOLOGICAL_AXIOMS, EL_PLUS_PLUS_INFERRED_TERMINOLOGICAL_AXIOMS))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(NECESSARY_SET))
@@ -4196,7 +4373,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(EL_PLUS_PLUS_STATED_TERMINOLOGICAL_AXIOMS, EL_PLUS_PLUS_INFERRED_TERMINOLOGICAL_AXIOMS))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(EL_PLUS_PLUS_STATED_TERMINOLOGICAL_AXIOMS, EL_PLUS_PLUS_INFERRED_TERMINOLOGICAL_AXIOMS)).attach(new TinkarBaseModel());
+                        .isA(EL_PLUS_PLUS_STATED_TERMINOLOGICAL_AXIOMS, EL_PLUS_PLUS_INFERRED_TERMINOLOGICAL_AXIOMS))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(NOT_APPLICABLE))
@@ -4221,7 +4399,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DESCRIPTION_CASE_SIGNIFICANCE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DESCRIPTION_CASE_SIGNIFICANCE)).attach(new TinkarBaseModel());
+                        .isA(DESCRIPTION_CASE_SIGNIFICANCE))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(OBJECT))
@@ -4247,7 +4426,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(STATUS_VALUE, DESCRIPTION, NID, UNIVERSALLY_UNIQUE_IDENTIFIER, ANY_COMPONENT, UNINITIALIZED_COMPONENT, SANDBOX_COMPONENT, MODULE, PATH, OBJECT_PROPERTIES, HAS_ACTIVE_INGREDIENT, HAS_DOSE_FORM, LATERALITY)
                         .parents(ROOT_VERTEX))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(ROOT_VERTEX)).attach(new TinkarBaseModel());
+                        .isA(ROOT_VERTEX))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(OBJECT_PROPERTIES))
@@ -4276,7 +4456,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                                 REFLEXIVE_PROPERTY, ANNOTATION_PROPERTY_SET, DATA_PROPERTY_SET, PROPERTY_SEQUENCE_IMPLICATION)
                         .parents(OBJECT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(OBJECT)).attach(new TinkarBaseModel());
+                        .isA(OBJECT))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(OR))
@@ -4301,7 +4482,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(CONNECTIVE_OPERATOR))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(CONNECTIVE_OPERATOR)).attach(new TinkarBaseModel());
+                        .isA(CONNECTIVE_OPERATOR))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(ORDER_FOR_AXIOM_ATTACHMENTS))
@@ -4326,7 +4508,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(USER))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(USER)).attach(new TinkarBaseModel());
+                        .isA(USER))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(ORDER_FOR_CONCEPT_ATTACHMENTS))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -4350,7 +4533,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(USER))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(USER)).attach(new TinkarBaseModel());
+                        .isA(USER))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(ORDER_FOR_DESCRIPTION_ATTACHMENTS))
@@ -4375,7 +4559,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(USER))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(USER)).attach(new TinkarBaseModel());
+                        .isA(USER))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(PART_OF))
@@ -4400,7 +4585,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(CONNECTIVE_OPERATOR))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(CONNECTIVE_OPERATOR)).attach(new TinkarBaseModel());
+                        .isA(CONNECTIVE_OPERATOR))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(PARTIAL))
@@ -4425,7 +4611,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(GROUPING))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(GROUPING)).attach(new TinkarBaseModel());
+                        .isA(GROUPING))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(PATH))
@@ -4451,7 +4638,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(DEVELOPMENT_PATH, MASTER_PATH, PRIMORDIAL_PATH, SANDBOX_PATH)
                         .parents(ROOT_VERTEX))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(ROOT_VERTEX)).attach(new TinkarBaseModel());
+                        .isA(ROOT_VERTEX))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(PATH_CONCEPT))
@@ -4476,7 +4664,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(CONCEPT_TYPE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(CONCEPT_TYPE)).attach(new TinkarBaseModel());
+                        .isA(CONCEPT_TYPE))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(PATH_COORDINATE_NAME))
@@ -4501,7 +4690,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(PATH_COORDINATE_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(PATH_COORDINATE_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(PATH_COORDINATE_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(PATH_COORDINATE_PROPERTIES))
@@ -4527,7 +4717,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(PATH_COORDINATE_NAME, PATH_ORIGINS)
                         .parents(OBJECT_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(OBJECT_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(OBJECT_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(PATH_FOR_PATH_COORDINATE))
@@ -4552,7 +4743,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(IMMUTABLECOORDINATE_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(IMMUTABLECOORDINATE_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(IMMUTABLECOORDINATE_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(PATH_FOR_USER))
@@ -4577,7 +4769,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(USER))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(USER)).attach(new TinkarBaseModel());
+                        .isA(USER))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(PATH_FOR_VERSION))
@@ -4602,7 +4795,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(VERSION_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(VERSION_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(VERSION_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(PATH_OPTIONS_FOR_EDIT_CORDINATE))
@@ -4627,7 +4821,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(IMMUTABLECOORDINATE_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(IMMUTABLECOORDINATE_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(IMMUTABLECOORDINATE_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(PATH_ORIGINS))
@@ -4652,7 +4847,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(PATH_COORDINATE_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(PATH_COORDINATE_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(PATH_COORDINATE_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(MODULE_ORIGINS))
@@ -4677,7 +4873,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach(new StatedNavigation()
                         .parents(LOGIC_COORDINATE_PROPERTIES))
                 .attach(new StatedAxiom()
-                        .isA(LOGIC_COORDINATE_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(LOGIC_COORDINATE_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(PATH_ORIGINS_FOR_STAMP_PATH))
@@ -4702,7 +4899,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(IMMUTABLECOORDINATE_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(IMMUTABLECOORDINATE_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(IMMUTABLECOORDINATE_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(PROMOTION_PATH_FOR_EDIT_CORDINATE))
@@ -4727,7 +4925,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(PATH_COORDINATE_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(PATH_COORDINATE_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(PATH_COORDINATE_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(PHENOMENON))
@@ -4753,7 +4952,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(EXAMPLE_UCUM_UNITS)
                         .parents(TINKAR_MODEL_CONCEPT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(TINKAR_MODEL_CONCEPT)).attach(new TinkarBaseModel());
+                        .isA(TINKAR_MODEL_CONCEPT))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(POLISH_DIALECT))
@@ -4778,7 +4978,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DIALECT_ASSEMBLAGE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DIALECT_ASSEMBLAGE)).attach(new TinkarBaseModel());
+                        .isA(DIALECT_ASSEMBLAGE))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(POLISH_LANGUAGE))
@@ -4803,7 +5004,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(LANGUAGE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(LANGUAGE)).attach(new TinkarBaseModel());
+                        .isA(LANGUAGE))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(PREFERRED))
@@ -4828,7 +5030,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DESCRIPTION_ACCEPTABILITY))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DESCRIPTION_ACCEPTABILITY)).attach(new TinkarBaseModel());
+                        .isA(DESCRIPTION_ACCEPTABILITY))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(PRESENTATION_UNIT_DIFFERENT))
@@ -4853,7 +5056,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(MEANING))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(MEANING)).attach(new TinkarBaseModel());
+                        .isA(MEANING))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(PRIMORDIAL_UUID_FOR_CHRONICLE))
@@ -4878,7 +5082,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(CHRONICLE_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(CHRONICLE_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(CHRONICLE_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(PRIMORDIAL_MODULE))
@@ -4903,7 +5108,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(MODULE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(MODULE)).attach(new TinkarBaseModel());
+                        .isA(MODULE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(PRIMORDIAL_PATH))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -4927,7 +5133,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(PATH))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(PATH)).attach(new TinkarBaseModel());
+                        .isA(PATH))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(PRIMORDIAL_STATE))
@@ -4952,7 +5159,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(STATUS_VALUE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(STATUS_VALUE)).attach(new TinkarBaseModel());
+                        .isA(STATUS_VALUE))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(REFERENCED_COMPONENT_NID_FOR_SEMANTIC))
@@ -4977,7 +5185,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(SEMANTIC_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(SEMANTIC_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(SEMANTIC_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(REFERENCED_COMPONENT_SUBTYPE_RESTRICTION))
@@ -5002,7 +5211,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(ROLE_OPERATOR))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(ROLE_OPERATOR)).attach(new TinkarBaseModel());
+                        .isA(ROLE_OPERATOR))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(REFERENCED_COMPONENT_TYPE_RESTRICTION))
@@ -5027,7 +5237,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(ROLE_OPERATOR))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(ROLE_OPERATOR)).attach(new TinkarBaseModel());
+                        .isA(ROLE_OPERATOR))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(REGULAR_NAME_DESCRIPTION_TYPE))
@@ -5052,7 +5263,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DESCRIPTION_TYPE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DESCRIPTION_TYPE)).attach(new TinkarBaseModel());
+                        .isA(DESCRIPTION_TYPE))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(RELATIONSHIP_DESTINATION))
@@ -5077,7 +5289,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(TINKAR_MODEL_CONCEPT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(TINKAR_MODEL_CONCEPT)).attach(new TinkarBaseModel());
+                        .isA(TINKAR_MODEL_CONCEPT))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(RELATIONSHIP_ORIGIN))
@@ -5102,7 +5315,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(TINKAR_MODEL_CONCEPT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(TINKAR_MODEL_CONCEPT)).attach(new TinkarBaseModel());
+                        .isA(TINKAR_MODEL_CONCEPT))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(TinkarTerm.ROLE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -5127,7 +5341,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(ROLE_TYPE, ROLE_OPERATOR, ROLE_RESTRICTION)
                         .parents(ROLE_GROUP, EL_PLUS_PLUS_INFERRED_TERMINOLOGICAL_AXIOMS, EL_PLUS_PLUS_STATED_TERMINOLOGICAL_AXIOMS))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(ROLE_GROUP, EL_PLUS_PLUS_INFERRED_TERMINOLOGICAL_AXIOMS, EL_PLUS_PLUS_STATED_TERMINOLOGICAL_AXIOMS)).attach(new TinkarBaseModel());
+                        .isA(ROLE_GROUP, EL_PLUS_PLUS_INFERRED_TERMINOLOGICAL_AXIOMS, EL_PLUS_PLUS_STATED_TERMINOLOGICAL_AXIOMS))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(ROLE_GROUP))
@@ -5153,7 +5368,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(TinkarTerm.ROLE)
                         .parents(EL_PLUS_PLUS_STATED_TERMINOLOGICAL_AXIOMS, EL_PLUS_PLUS_INFERRED_TERMINOLOGICAL_AXIOMS))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(EL_PLUS_PLUS_STATED_TERMINOLOGICAL_AXIOMS, EL_PLUS_PLUS_INFERRED_TERMINOLOGICAL_AXIOMS)).attach(new TinkarBaseModel());
+                        .isA(EL_PLUS_PLUS_STATED_TERMINOLOGICAL_AXIOMS, EL_PLUS_PLUS_INFERRED_TERMINOLOGICAL_AXIOMS))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(ROLE_OPERATOR))
@@ -5179,7 +5395,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(UNIVERSAL_RESTRICTION, EXISTENTIAL_RESTRICTION)
                         .parents(TinkarTerm.ROLE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(TinkarTerm.ROLE)).attach(new TinkarBaseModel());
+                        .isA(TinkarTerm.ROLE))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(ROLE_RESTRICTION))
@@ -5204,7 +5421,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(TinkarTerm.ROLE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(TinkarTerm.ROLE)).attach(new TinkarBaseModel());
+                        .isA(TinkarTerm.ROLE))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(ROLE_TYPE))
@@ -5229,7 +5447,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(TinkarTerm.ROLE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(TinkarTerm.ROLE)).attach(new TinkarBaseModel());
+                        .isA(TinkarTerm.ROLE))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(ROLE_TYPE_TO_ADD))
@@ -5254,7 +5473,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(ACTION_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(ACTION_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(ACTION_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(ROOT_FOR_LOGIC_COORDINATE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -5278,7 +5498,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(IMMUTABLECOORDINATE_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(IMMUTABLECOORDINATE_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(IMMUTABLECOORDINATE_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(RUSSIAN_DIALECT))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -5302,7 +5523,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DIALECT_ASSEMBLAGE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DIALECT_ASSEMBLAGE)).attach(new TinkarBaseModel());
+                        .isA(DIALECT_ASSEMBLAGE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(RUSSIAN_LANGUAGE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -5326,7 +5548,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(LANGUAGE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(LANGUAGE)).attach(new TinkarBaseModel());
+                        .isA(LANGUAGE))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(SANDBOX_COMPONENT))
@@ -5352,7 +5575,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(SANDBOX_MODULE, SANDBOX_PATH)
                         .parents(OBJECT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(OBJECT)).attach(new TinkarBaseModel());
+                        .isA(OBJECT))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(SANDBOX_MODULE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -5377,7 +5601,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(SANDBOX_PATH_MODULE)
                         .parents(MODULE, SANDBOX_COMPONENT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(MODULE, SANDBOX_COMPONENT)).attach(new TinkarBaseModel());
+                        .isA(MODULE, SANDBOX_COMPONENT))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(SANDBOX_PATH))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -5401,7 +5626,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(PATH))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(PATH)).attach(new TinkarBaseModel());
+                        .isA(PATH))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(SANDBOX_PATH_MODULE))
@@ -5426,7 +5652,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(SANDBOX_MODULE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(SANDBOX_MODULE)).attach(new TinkarBaseModel());
+                        .isA(SANDBOX_MODULE))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(SEMANTIC_FIELD_CONCEPTS))
@@ -5451,7 +5678,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(CONCEPT_TYPE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(CONCEPT_TYPE)).attach(new TinkarBaseModel());
+                        .isA(CONCEPT_TYPE))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(SEMANTIC_FIELD_NAME))
@@ -5476,7 +5704,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(SEMANTIC_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(SEMANTIC_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(SEMANTIC_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(SEMANTIC_FIELD_TYPE))
@@ -5501,7 +5730,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DISPLAY_FIELDS))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DISPLAY_FIELDS)).attach(new TinkarBaseModel());
+                        .isA(DISPLAY_FIELDS))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(SEMANTIC_PROPERTIES))
@@ -5527,7 +5757,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(REFERENCED_COMPONENT_NID_FOR_SEMANTIC, COMPONENT_FOR_SEMANTIC, LOGIC_GRAPH_FOR_SEMANTIC, SEMANTIC_FIELD_NAME)
                         .parents(OBJECT_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(OBJECT_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(OBJECT_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(SEMANTIC_TYPE))
@@ -5553,7 +5784,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(COMPONENT_SEMANTIC, CONCEPT_SEMANTIC, DESCRIPTION_SEMANTIC, LOGICAL_EXPRESSION_SEMANTIC, MEMBERSHIP_SEMANTIC)
                         .parents(MEANING))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(MEANING)).attach(new TinkarBaseModel());
+                        .isA(MEANING))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(SIGNED_INTEGER))
@@ -5578,7 +5810,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DYNAMIC_COLUMN_DATA_TYPES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DYNAMIC_COLUMN_DATA_TYPES)).attach(new TinkarBaseModel());
+                        .isA(DYNAMIC_COLUMN_DATA_TYPES))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(SPANISH_LANGUAGE))
@@ -5603,7 +5836,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(LANGUAGE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(LANGUAGE)).attach(new TinkarBaseModel());
+                        .isA(LANGUAGE))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(STANDARD_KOREAN_DIALECT))
@@ -5628,7 +5862,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(KOREAN_DIALECT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(KOREAN_DIALECT)).attach(new TinkarBaseModel());
+                        .isA(KOREAN_DIALECT))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(STATED_PREMISE_TYPE))
@@ -5653,7 +5888,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(AXIOM_ORIGIN))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(AXIOM_ORIGIN)).attach(new TinkarBaseModel());
+                        .isA(AXIOM_ORIGIN))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(STATUS_FOR_VERSION))
@@ -5678,7 +5914,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(VERSION_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(VERSION_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(VERSION_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(STATUS_VALUE))
@@ -5704,7 +5941,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(ACTIVE_STATE, CANCELED_STATE, INACTIVE_STATE, PRIMORDIAL_STATE, WITHDRAWN_STATE)
                         .parents(ROOT_VERTEX))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(ROOT_VERTEX)).attach(new TinkarBaseModel());
+                        .isA(ROOT_VERTEX))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(STRING))
@@ -5729,7 +5967,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DISPLAY_FIELDS))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DISPLAY_FIELDS)).attach(new TinkarBaseModel());
+                        .isA(DISPLAY_FIELDS))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(SUFFICIENT_CONCEPT_DEFINITION))
@@ -5754,7 +5993,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(SUFFICIENT_CONCEPT_DEFINITION_OPERATOR))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(SUFFICIENT_CONCEPT_DEFINITION_OPERATOR)).attach(new TinkarBaseModel());
+                        .isA(SUFFICIENT_CONCEPT_DEFINITION_OPERATOR))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(SUFFICIENT_CONCEPT_DEFINITION_OPERATOR))
@@ -5780,7 +6020,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(SUFFICIENT_CONCEPT_DEFINITION, NECESSARY_BUT_NOT_SUFFICIENT_CONCEPT_DEFINITION)
                         .parents(MEANING))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(MEANING)).attach(new TinkarBaseModel());
+                        .isA(MEANING))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(SUFFICIENT_SET))
@@ -5805,7 +6046,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(EL_PLUS_PLUS_STATED_TERMINOLOGICAL_AXIOMS, EL_PLUS_PLUS_INFERRED_TERMINOLOGICAL_AXIOMS))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(EL_PLUS_PLUS_STATED_TERMINOLOGICAL_AXIOMS, EL_PLUS_PLUS_INFERRED_TERMINOLOGICAL_AXIOMS)).attach(new TinkarBaseModel());
+                        .isA(EL_PLUS_PLUS_STATED_TERMINOLOGICAL_AXIOMS, EL_PLUS_PLUS_INFERRED_TERMINOLOGICAL_AXIOMS))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(SWEDISH_LANGUAGE))
@@ -5830,7 +6072,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(LANGUAGE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(LANGUAGE)).attach(new TinkarBaseModel());
+                        .isA(LANGUAGE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(TEXT_FOR_DESCRIPTION))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -5854,7 +6097,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(TINKAR_MODEL_CONCEPT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(TINKAR_MODEL_CONCEPT)).attach(new TinkarBaseModel());
+                        .isA(TINKAR_MODEL_CONCEPT))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(TIME_FOR_VERSION))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -5878,7 +6122,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(VERSION_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(VERSION_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(VERSION_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(TREE_AMALGAM_PROPERTIES))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -5903,7 +6148,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(INVERSE_TREE_LIST, TREE_LIST)
                         .parents(OBJECT_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(OBJECT_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(OBJECT_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(TREE_LIST))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -5927,7 +6173,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(TREE_AMALGAM_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(TREE_AMALGAM_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(TREE_AMALGAM_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(US_ENGLISH_DIALECT))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -5952,7 +6199,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(US_NURSING_DIALECT)
                         .parents(ENGLISH_DIALECT_ASSEMBLAGE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(ENGLISH_DIALECT_ASSEMBLAGE)).attach(new TinkarBaseModel());
+                        .isA(ENGLISH_DIALECT_ASSEMBLAGE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(US_NURSING_DIALECT))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -5976,7 +6224,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(US_ENGLISH_DIALECT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(US_ENGLISH_DIALECT)).attach(new TinkarBaseModel());
+                        .isA(US_ENGLISH_DIALECT))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(UUID_DATA_TYPE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -6000,7 +6249,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DYNAMIC_COLUMN_DATA_TYPES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DYNAMIC_COLUMN_DATA_TYPES)).attach(new TinkarBaseModel());
+                        .isA(DYNAMIC_COLUMN_DATA_TYPES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(UUID_FIELD))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -6024,7 +6274,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DISPLAY_FIELDS))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DISPLAY_FIELDS)).attach(new TinkarBaseModel());
+                        .isA(DISPLAY_FIELDS))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(UUID_LIST_FOR_COMPONENT))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -6048,7 +6299,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(CHRONICLE_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(CHRONICLE_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(CHRONICLE_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(UNCATEGORIZED_PHENOMENON))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -6072,7 +6324,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(PHENOMENON))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(PHENOMENON)).attach(new TinkarBaseModel());
+                        .isA(PHENOMENON))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(UNINITIALIZED_COMPONENT))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -6096,7 +6349,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(OBJECT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(OBJECT)).attach(new TinkarBaseModel());
+                        .isA(OBJECT))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(UNIVERSAL_RESTRICTION))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -6120,7 +6374,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(ROLE_OPERATOR))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(ROLE_OPERATOR)).attach(new TinkarBaseModel());
+                        .isA(ROLE_OPERATOR))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(UNIVERSALLY_UNIQUE_IDENTIFIER))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -6144,7 +6399,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(IDENTIFIER_SOURCE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(IDENTIFIER_SOURCE)).attach(new TinkarBaseModel());
+                        .isA(IDENTIFIER_SOURCE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(USER))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -6169,7 +6425,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(KOMET_USER, KOMET_USER_LIST, MODULE_FOR_USER, ORDER_FOR_AXIOM_ATTACHMENTS, ORDER_FOR_CONCEPT_ATTACHMENTS, ORDER_FOR_DESCRIPTION_ATTACHMENTS, PATH_FOR_USER, STARTER_DATA_AUTHORING)
                         .parents(ROOT_VERTEX))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(ROOT_VERTEX)).attach(new TinkarBaseModel());
+                        .isA(ROOT_VERTEX))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(VERSION_LIST_FOR_CHRONICLE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -6193,7 +6450,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(CHRONICLE_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(CHRONICLE_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(CHRONICLE_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(VERSION_PROPERTIES))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -6218,7 +6476,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(AUTHOR_FOR_VERSION, MODULE_FOR_VERSION, PATH_FOR_VERSION, STATUS_FOR_VERSION, TIME_FOR_VERSION, DESCRIPTION_VERSION_PROPERTIES)
                         .parents(OBJECT_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(OBJECT_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(OBJECT_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(VERTEX_FIELD))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -6242,7 +6501,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DISPLAY_FIELDS))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DISPLAY_FIELDS)).attach(new TinkarBaseModel());
+                        .isA(DISPLAY_FIELDS))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(VERTEX_STATE_SET))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -6266,7 +6526,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(IMMUTABLECOORDINATE_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(IMMUTABLECOORDINATE_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(IMMUTABLECOORDINATE_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(VERTEX_SORT))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -6290,7 +6551,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(IMMUTABLECOORDINATE_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(IMMUTABLECOORDINATE_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(IMMUTABLECOORDINATE_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(VIEW_COORDINATE_KEY))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -6314,7 +6576,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(QUERY_CLAUSES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(QUERY_CLAUSES)).attach(new TinkarBaseModel());
+                        .isA(QUERY_CLAUSES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(WITHDRAWN_STATE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -6338,7 +6601,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(STATUS_VALUE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(STATUS_VALUE)).attach(new TinkarBaseModel());
+                        .isA(STATUS_VALUE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(BOOLEAN))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -6362,7 +6626,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DYNAMIC_COLUMN_DATA_TYPES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DYNAMIC_COLUMN_DATA_TYPES)).attach(new TinkarBaseModel());
+                        .isA(DYNAMIC_COLUMN_DATA_TYPES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(BYTE_ARRAY))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -6386,7 +6651,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DYNAMIC_COLUMN_DATA_TYPES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DYNAMIC_COLUMN_DATA_TYPES)).attach(new TinkarBaseModel());
+                        .isA(DYNAMIC_COLUMN_DATA_TYPES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(DESCRIPTION_LIST_FOR_CONCEPT))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -6410,7 +6676,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(TINKAR_MODEL_CONCEPT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(TINKAR_MODEL_CONCEPT)).attach(new TinkarBaseModel());
+                        .isA(TINKAR_MODEL_CONCEPT))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(DOUBLE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -6434,7 +6701,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DYNAMIC_COLUMN_DATA_TYPES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DYNAMIC_COLUMN_DATA_TYPES)).attach(new TinkarBaseModel());
+                        .isA(DYNAMIC_COLUMN_DATA_TYPES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(FLOAT))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -6458,7 +6726,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DYNAMIC_COLUMN_DATA_TYPES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DYNAMIC_COLUMN_DATA_TYPES)).attach(new TinkarBaseModel());
+                        .isA(DYNAMIC_COLUMN_DATA_TYPES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(TinkarTerm.DECIMAL))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -6482,7 +6751,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DYNAMIC_COLUMN_DATA_TYPES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DYNAMIC_COLUMN_DATA_TYPES)).attach(new TinkarBaseModel());
+                        .isA(DYNAMIC_COLUMN_DATA_TYPES))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(LOGIC_GRAPH_FOR_SEMANTIC))
@@ -6507,7 +6777,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(SEMANTIC_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(SEMANTIC_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(SEMANTIC_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(LONG))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -6531,7 +6802,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DYNAMIC_COLUMN_DATA_TYPES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DYNAMIC_COLUMN_DATA_TYPES)).attach(new TinkarBaseModel());
+                        .isA(DYNAMIC_COLUMN_DATA_TYPES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(NID))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -6555,7 +6827,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(OBJECT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(OBJECT)).attach(new TinkarBaseModel());
+                        .isA(OBJECT))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(SEMANTIC_LIST_FOR_CHRONICLE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -6579,7 +6852,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(CHRONICLE_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(CHRONICLE_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(CHRONICLE_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(USERS_MODULE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -6603,7 +6877,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(MODULE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(MODULE)).attach(new TinkarBaseModel());
+                        .isA(MODULE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(ROOT_VERTEX))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -6627,7 +6902,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .children(MODEL_CONCEPT, MEANING, OBJECT, TinkarTerm.ROLE, USER, ANNOTATION_TYPE, CREATIVE_COMMONS_BY_LICENSE, HEALTH_CONCEPT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(ROOT_VERTEX)).attach(new TinkarBaseModel());
+                        .isA(ROOT_VERTEX))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(QUERY_CLAUSES))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -6652,7 +6928,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(BOOLEAN_REFERENCE, VIEW_COORDINATE_KEY)
                         .parents(MEANING))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(MEANING)).attach(new TinkarBaseModel());
+                        .isA(MEANING))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(FIELD_SUBSTITUTION))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -6677,7 +6954,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(BOOLEAN_SUBSTITUTION, CONCEPT_SUBSTITUTION, FLOAT_SUBSTITUTION, INSTANT_SUBSTITUTION)
                         .parents(MEANING))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(MEANING)).attach(new TinkarBaseModel());
+                        .isA(MEANING))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(TAXONOMY_OPERATOR))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -6702,7 +6980,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(LOGICALLY_EQUIVALENT_TO)
                         .parents(MEANING))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(MEANING)).attach(new TinkarBaseModel());
+                        .isA(MEANING))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(IMMUTABLECOORDINATE_PROPERTIES))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -6727,7 +7006,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(ALLOWED_STATES_FOR_STAMP_COORDINATE, AUTHORS_FOR_STAMP_COORDINATE, MODULE_EXCLUSION_SET_FOR_STAMP_COORDINATE, MODULE_PREFERENCE_LIST_FOR_STAMP_COORDINATE, MODULE_PREFERENCE_ORDER_FOR_STAMP_COORDINATE, MODULES_FOR_STAMP_COORDINATE, AUTHOR_FOR_EDIT_COORDINATE, DEFAULT_MODULE_FOR_EDIT_COORDINATE, DESTINATION_MODULE_FOR_EDIT_COORDINATE, MODULE_OPTIONS_FOR_EDIT_COORDINATE, PATH_OPTIONS_FOR_EDIT_CORDINATE, DESCRIPTION_LOGIC_PROFILE_FOR_LOGIC_COORDINATE, DIGRAPH_FOR_LOGIC_COORDINATE, ROOT_FOR_LOGIC_COORDINATE, DESCRIPTION_TYPE_PREFERENCE_LIST_FOR_LANGUAGE_COORDINATE, LANGUAGE_NID_FOR_LANGUAGE_COORDINATE, LANGUAGE_SPECIFICATION_FOR_LANGUAGE_COORDINATE, MODULE_PREFERENCE_LIST_FOR_LANGUAGE_COORDINATE, PATH_FOR_PATH_COORDINATE, PATH_ORIGINS_FOR_STAMP_PATH, VERTEX_SORT, VERTEX_STATE_SET, STATED_ASSEMBLAGE_FOR_LOGIC_COORDINATE, INFERRED_ASSEMBLAGE_FOR_LOGIC_COORDINATE, CLASSIFIER_FOR_LOGIC_COORDINATE, POSITION_ON_PATH)
                         .parents(OBJECT_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(OBJECT_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(OBJECT_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(PURPOSE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -6751,7 +7031,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(TINKAR_MODEL_CONCEPT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(TINKAR_MODEL_CONCEPT)).attach(new TinkarBaseModel());
+                        .isA(TINKAR_MODEL_CONCEPT))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(ACTION_PROPERTIES))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -6776,7 +7057,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(CONCEPT_CONSTRAINTS, CONCEPT_TO_FIND, ROLE_TYPE_TO_ADD, CONDITIONAL_TRIGGERS)
                         .parents(OBJECT_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(OBJECT_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(OBJECT_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(LITERAL_VALUE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -6801,7 +7083,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(BOOLEAN_LITERAL, FLOAT_LITERAL, INSTANT_LITERAL)
                         .parents(MEANING))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(MEANING)).attach(new TinkarBaseModel());
+                        .isA(MEANING))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(DIALECT_ASSEMBLAGE))
@@ -6827,7 +7110,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(CZECH_DIALECT, ENGLISH_DIALECT_ASSEMBLAGE, FRENCH_DIALECT, IRISH_DIALECT, KOREAN_DIALECT, POLISH_DIALECT, RUSSIAN_DIALECT)
                         .parents(TINKAR_MODEL_CONCEPT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(TINKAR_MODEL_CONCEPT)).attach(new TinkarBaseModel());
+                        .isA(TINKAR_MODEL_CONCEPT))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(DYNAMIC_COLUMN_DATA_TYPES))
@@ -6853,7 +7137,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(ARRAY, BOOLEAN, BYTE_ARRAY, DOUBLE, FLOAT, LONG, SIGNED_INTEGER, STRING, UUID_DATA_TYPE, DECIMAL)
                         .parents(MEANING))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(MEANING)).attach(new TinkarBaseModel());
+                        .isA(MEANING))
+                .attach(new TinkarBaseModel());
 
         // TODO: Get coordinates to work via Komet's KometTerm
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(POSITION_ON_PATH))
@@ -6878,7 +7163,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(IMMUTABLECOORDINATE_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(IMMUTABLECOORDINATE_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(IMMUTABLECOORDINATE_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(STATED_ASSEMBLAGE_FOR_LOGIC_COORDINATE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -6902,7 +7188,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(IMMUTABLECOORDINATE_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(IMMUTABLECOORDINATE_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(IMMUTABLECOORDINATE_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(INFERRED_ASSEMBLAGE_FOR_LOGIC_COORDINATE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -6926,7 +7213,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(IMMUTABLECOORDINATE_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(IMMUTABLECOORDINATE_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(IMMUTABLECOORDINATE_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(CONCEPT_ASSEMBLAGE_FOR_LOGIC_COORDINATE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -6950,7 +7238,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DESCRIPTION_TYPE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DESCRIPTION_TYPE)).attach(new TinkarBaseModel());
+                        .isA(DESCRIPTION_TYPE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(CLASSIFIER_FOR_LOGIC_COORDINATE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -6974,7 +7263,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(IMMUTABLECOORDINATE_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(IMMUTABLECOORDINATE_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(IMMUTABLECOORDINATE_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(DIALECT_ASSEMBLAGE_PREFERENCE_LIST_FOR_LANGUAGE_COORDINATE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -6998,7 +7288,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(LANGUAGE_COORDINATE_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(LANGUAGE_COORDINATE_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(LANGUAGE_COORDINATE_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(SOLOR_OVERLAY_MODULE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -7022,7 +7313,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DESCRIPTION_TYPE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DESCRIPTION_TYPE)).attach(new TinkarBaseModel());
+                        .isA(DESCRIPTION_TYPE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(SOLOR_MODULE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -7046,7 +7338,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DESCRIPTION_TYPE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DESCRIPTION_TYPE)).attach(new TinkarBaseModel());
+                        .isA(DESCRIPTION_TYPE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(TRANSITIVE_PROPERTY))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -7070,7 +7363,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(OBJECT_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(OBJECT_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(OBJECT_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(REFLEXIVE_PROPERTY))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -7094,7 +7388,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(OBJECT_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(OBJECT_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(OBJECT_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(LATERALITY))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -7118,7 +7413,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(OBJECT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(OBJECT)).attach(new TinkarBaseModel());
+                        .isA(OBJECT))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(HAS_ACTIVE_INGREDIENT))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -7142,7 +7438,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(OBJECT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(OBJECT)).attach(new TinkarBaseModel());
+                        .isA(OBJECT))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(HAS_DOSE_FORM))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -7166,7 +7463,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(OBJECT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(OBJECT)).attach(new TinkarBaseModel());
+                        .isA(OBJECT))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(UNMODELED_ROLE_CONCEPT))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -7190,7 +7488,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DESCRIPTION_TYPE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DESCRIPTION_TYPE)).attach(new TinkarBaseModel());
+                        .isA(DESCRIPTION_TYPE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(DYNAMIC_REFERENCED_COMPONENT_RESTRICTION))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -7214,7 +7513,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DESCRIPTION_TYPE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DESCRIPTION_TYPE)).attach(new TinkarBaseModel());
+                        .isA(DESCRIPTION_TYPE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(EXISTENTIAL_RESTRICTION))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -7238,7 +7538,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(ROLE_OPERATOR))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(ROLE_OPERATOR)).attach(new TinkarBaseModel());
+                        .isA(ROLE_OPERATOR))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(INTRINSIC_ROLE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -7262,7 +7563,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DESCRIPTION_TYPE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DESCRIPTION_TYPE)).attach(new TinkarBaseModel());
+                        .isA(DESCRIPTION_TYPE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(PROPERTY_PATTERN_IMPLICATION))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -7286,7 +7588,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DESCRIPTION_TYPE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DESCRIPTION_TYPE)).attach(new TinkarBaseModel());
+                        .isA(DESCRIPTION_TYPE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(SNOROCKET_CLASSIFIER))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -7310,7 +7613,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DESCRIPTION_TYPE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DESCRIPTION_TYPE)).attach(new TinkarBaseModel());
+                        .isA(DESCRIPTION_TYPE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(PROPERTY_SET))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -7334,7 +7638,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DESCRIPTION_TYPE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DESCRIPTION_TYPE)).attach(new TinkarBaseModel());
+                        .isA(DESCRIPTION_TYPE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(FEATURE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -7358,7 +7663,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DESCRIPTION_TYPE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DESCRIPTION_TYPE)).attach(new TinkarBaseModel());
+                        .isA(DESCRIPTION_TYPE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(EXAMPLE_UCUM_UNITS))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -7385,7 +7691,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(PHENOMENON))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(PHENOMENON)).attach(new TinkarBaseModel());
+                        .isA(PHENOMENON))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(INFERRED_DEFINITION))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -7409,7 +7716,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(TINKAR_MODEL_CONCEPT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(TINKAR_MODEL_CONCEPT)).attach(new TinkarBaseModel());
+                        .isA(TINKAR_MODEL_CONCEPT))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(IDENTIFIER_VALUE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -7433,7 +7741,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(TINKAR_MODEL_CONCEPT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(TINKAR_MODEL_CONCEPT)).attach(new TinkarBaseModel());
+                        .isA(TINKAR_MODEL_CONCEPT))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(MAXIMUM_VALUE_OPERATOR))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -7457,7 +7766,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(CONCRETE_DOMAIN_OPERATOR))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(CONCRETE_DOMAIN_OPERATOR)).attach(new TinkarBaseModel());
+                        .isA(CONCRETE_DOMAIN_OPERATOR))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(MINIMUM_VALUE_OPERATOR))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -7481,7 +7791,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(CONCRETE_DOMAIN_OPERATOR))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(CONCRETE_DOMAIN_OPERATOR)).attach(new TinkarBaseModel());
+                        .isA(CONCRETE_DOMAIN_OPERATOR))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(REFERENCE_RANGE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -7506,7 +7817,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(REFERENCE_RANGE_MAXIMUM, REFERENCE_RANGE_MINIMUM)
                         .parents(TINKAR_MODEL_CONCEPT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(TINKAR_MODEL_CONCEPT)).attach(new TinkarBaseModel());
+                        .isA(TINKAR_MODEL_CONCEPT))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(REFERENCE_RANGE_MAXIMUM))
@@ -7531,7 +7843,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(REFERENCE_RANGE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(REFERENCE_RANGE)).attach(new TinkarBaseModel());
+                        .isA(REFERENCE_RANGE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(REFERENCE_RANGE_MINIMUM))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -7555,7 +7868,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(REFERENCE_RANGE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(REFERENCE_RANGE)).attach(new TinkarBaseModel());
+                        .isA(REFERENCE_RANGE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(STATED_DEFINITION))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -7579,7 +7893,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(TINKAR_MODEL_CONCEPT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(TINKAR_MODEL_CONCEPT)).attach(new TinkarBaseModel());
+                        .isA(TINKAR_MODEL_CONCEPT))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(VALUE_CONSTRAINT))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -7603,7 +7918,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(TINKAR_MODEL_CONCEPT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(TINKAR_MODEL_CONCEPT)).attach(new TinkarBaseModel());
+                        .isA(TINKAR_MODEL_CONCEPT))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(VALUE_CONSTRAINT_SOURCE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -7627,7 +7943,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(TINKAR_MODEL_CONCEPT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(TINKAR_MODEL_CONCEPT)).attach(new TinkarBaseModel());
+                        .isA(TINKAR_MODEL_CONCEPT))
+                .attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(FEATURE_TYPE))
@@ -7653,7 +7970,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(OBJECT_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(OBJECT_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(OBJECT_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(PROPERTY_SEQUENCE))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -7678,7 +7996,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(OBJECT_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(OBJECT_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(OBJECT_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(STATED_NAVIGATION))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -7702,7 +8021,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DESCRIPTION_TYPE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DESCRIPTION_TYPE)).attach(new TinkarBaseModel());
+                        .isA(DESCRIPTION_TYPE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(INFERRED_NAVIGATION))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -7726,7 +8046,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(DESCRIPTION_TYPE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(DESCRIPTION_TYPE)).attach(new TinkarBaseModel());
+                        .isA(DESCRIPTION_TYPE))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(ANNOTATION_PROPERTY_SET))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -7750,7 +8071,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(OBJECT_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(OBJECT_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(OBJECT_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(DATA_PROPERTY_SET))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -7774,7 +8096,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(OBJECT_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(OBJECT_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(OBJECT_PROPERTIES))
+                .attach(new TinkarBaseModel());
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(PROPERTY_SEQUENCE_IMPLICATION))
                 .attach((FullyQualifiedName fqn) -> fqn
@@ -7798,7 +8121,8 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(OBJECT_PROPERTIES))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(OBJECT_PROPERTIES)).attach(new TinkarBaseModel());
+                        .isA(OBJECT_PROPERTIES))
+                .attach(new TinkarBaseModel());
     }
 
     private void createPatterns(Session session) {

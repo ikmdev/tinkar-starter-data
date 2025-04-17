@@ -31,7 +31,7 @@ jobs:
           find . -name "pom.xml" -exec sh -c '
           for pom; do
             echo "Processing $pom"
-            value=$(mvn help:evaluate -Dexpression='data-artifact.artifactId' -q -DforceStdout -f "$pom")
+            value=$(mvn help:evaluate -Dexpression=data-artifact.artifactId -q -DforceStdout -f "$pom")
             if [ -n "$value" ]; then
               echo "Value of data-artifact.artifactId in $pom: $value"
             else

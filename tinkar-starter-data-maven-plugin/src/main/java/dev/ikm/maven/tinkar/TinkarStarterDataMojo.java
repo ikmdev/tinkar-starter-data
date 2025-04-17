@@ -5153,7 +5153,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(TinkarTerm.ROLE)
                         .parents(EL_PLUS_PLUS_STATED_TERMINOLOGICAL_AXIOMS, EL_PLUS_PLUS_INFERRED_TERMINOLOGICAL_AXIOMS))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(EL_PLUS_PLUS_STATED_TERMINOLOGICAL_AXIOMS, EL_PLUS_PLUS_INFERRED_TERMINOLOGICAL_AXIOMS));
+                        .isA(EL_PLUS_PLUS_STATED_TERMINOLOGICAL_AXIOMS, EL_PLUS_PLUS_INFERRED_TERMINOLOGICAL_AXIOMS)).attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(ROLE_OPERATOR))
@@ -5179,7 +5179,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .children(UNIVERSAL_RESTRICTION, EXISTENTIAL_RESTRICTION)
                         .parents(TinkarTerm.ROLE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(TinkarTerm.ROLE));
+                        .isA(TinkarTerm.ROLE)).attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(ROLE_RESTRICTION))
@@ -5204,7 +5204,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(TinkarTerm.ROLE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(TinkarTerm.ROLE));
+                        .isA(TinkarTerm.ROLE)).attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(ROLE_TYPE))
@@ -5229,7 +5229,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .parents(TinkarTerm.ROLE))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(TinkarTerm.ROLE));
+                        .isA(TinkarTerm.ROLE)).attach(new TinkarBaseModel());
 
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(ROLE_TYPE_TO_ADD))

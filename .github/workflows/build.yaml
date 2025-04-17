@@ -33,12 +33,14 @@ jobs:
             echo "Processing $pom"
             value=$(mvn help:evaluate -Dexpression=data-artifact.artifactId -q -DforceStdout -f "$pom")
             if [ -n "$value" ]; then
-              echo "Value of data-artifact.artifactId in $pom: $value"
-            else
-              echo "Property data-artifact.artifactId not found in $pom"
+              echo "ARTIFACT_ID=$value" >> $GITHUB_OUTPUT
             fi
           done
           ' sh {} +
+
+      - name: Print Value
+        run: |
+          echo "Artifact Value -- ${{steps.artifact_id_property.outputs.ARTIFACT_ID}}"
           exit 1
       
       - name: Build IKMDEV Code

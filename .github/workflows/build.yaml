@@ -38,6 +38,7 @@ jobs:
               echo "Property data-artifact.artifactId not found in $pom"
             fi
           done
+          ' sh {} +
           exit 1
       
       - name: Build IKMDEV Code

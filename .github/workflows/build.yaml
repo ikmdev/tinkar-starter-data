@@ -32,7 +32,7 @@ jobs:
           for pom; do
             echo "Processing $pom"
             value=$(mvn help:evaluate -Dexpression=data-artifact.artifactId -q -DforceStdout -f "$pom")
-            if [ -n "$value" ]; then
+            if [ "$value" != "null object or invalid expression" ]; then
               echo "ARTIFACT_ID=$value" >> $GITHUB_OUTPUT
             fi
           done

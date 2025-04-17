@@ -24,6 +24,12 @@ jobs:
     steps:      
       - name: Checkout Repository
         uses: actions/checkout@v4
+
+      - name: Get Artifact ID Property
+        id: artifact_id_property
+        run: |
+          find . -name "pom.xml" -exec mvn help:evaluate -D'expression=data-artifact.artifactId' -q -D'forceStdout' -f {} \;
+          exit 1
       
       - name: Build IKMDEV Code
         uses: ikmdev/maven-clean-install-build-action@v3.2.0

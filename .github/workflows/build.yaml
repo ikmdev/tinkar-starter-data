@@ -28,7 +28,16 @@ jobs:
       - name: Get Artifact ID Property
         id: artifact_id_property
         run: |
-          find . -name "pom.xml" -exec mvn help:evaluate -D'expression=data-artifact.artifactId' -q -D'forceStdout' -f {} \;
+          find . -name "pom.xml" -exec sh -c '
+          for pom; do
+            echo "Processing $pom"
+            value=$(mvn help:evaluate -Dexpression='data-artifact.artifactId' -q -DforceStdout -f "$pom")
+            if [ -n "$value" ]; then
+              echo "Value of data-artifact.artifactId in $pom: $value"
+            else
+              echo "Property data-artifact.artifactId not found in $pom"
+            fi
+          done
           exit 1
       
       - name: Build IKMDEV Code

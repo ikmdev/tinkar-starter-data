@@ -21,10 +21,10 @@ jobs:
   build-job:
     name: Build Job
     runs-on: ubuntu-24.04
-    steps:      
+    steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-      
+
       - name: Build IKMDEV Code
         uses: ikmdev/maven-clean-install-build-action@v3.2.0
         with:

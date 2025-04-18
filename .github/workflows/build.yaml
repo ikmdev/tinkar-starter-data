@@ -21,28 +21,10 @@ jobs:
   build-job:
     name: Build Job
     runs-on: ubuntu-24.04
-    steps:      
+    steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Get Artifact ID Property
-        id: artifact_id_property
-        run: |
-          find . -name "pom.xml" -exec sh -c '
-          for pom; do
-            echo "Processing $pom"
-            value=$(mvn help:evaluate -Dexpression=data-artifact.artifactId -q -DforceStdout -f "$pom")
-            if [ "$value" != "null object or invalid expression" ]; then
-              echo "ARTIFACT_ID=$value" >> $GITHUB_OUTPUT
-            fi
-          done
-          ' sh {} +
-
-      - name: Print Value
-        run: |
-          echo "Artifact Value -- ${{steps.artifact_id_property.outputs.ARTIFACT_ID}}"
-          exit 1
-      
       - name: Build IKMDEV Code
         uses: ikmdev/maven-clean-install-build-action@v3.2.0
         with:

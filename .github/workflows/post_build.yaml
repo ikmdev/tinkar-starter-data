@@ -35,9 +35,15 @@ jobs:
       - name: Get Artifact ID Property
         id: artifact_id_property
         run: |
-          find . -name "pom.xml" -exec mvn help:evaluate -D'expression=data-artifact.artifactId' -q -D'forceStdout' -f {} \;
-          exit 1
-          echo "ARTIFACT_ID=$(mvn help:evaluate -D'expression=project.artifactId' -q -D'forceStdout')" >> $GITHUB_OUTPUT
+            find . -name "pom.xml" -exec sh -c '
+            for pom; do
+              echo "Processing $pom"
+              value=$(mvn help:evaluate -Dexpression=data-artifact.artifactId -q -DforceStdout -f "$pom")
+              if [ "$value" != "null object or invalid expression" ]; then
+                echo "ARTIFACT_ID=$value" >> $GITHUB_OUTPUT
+              fi
+            done
+            ' sh {} +
           
       - name: IKMDEV Post Build Action
         id: ikmdev_post_build

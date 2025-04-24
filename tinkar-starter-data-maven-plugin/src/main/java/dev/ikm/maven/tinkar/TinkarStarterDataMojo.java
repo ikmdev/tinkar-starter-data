@@ -2109,7 +2109,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .attach(usDialect()))
                 .attach((Synonym synonym) -> synonym
-                        .text("DiGraph field")
+                        .text("DiGraph")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))

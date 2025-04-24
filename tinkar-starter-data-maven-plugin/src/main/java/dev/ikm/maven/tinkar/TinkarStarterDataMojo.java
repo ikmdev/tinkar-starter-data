@@ -661,6 +661,31 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .isA(DISPLAY_FIELDS))
                 .attach(new TinkarBaseModel());
 
+        session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(IMAGE_FIELD))
+                .attach((FullyQualifiedName fqn) -> fqn
+                        .text("Image field (SOLOR)")
+                        .language(ENGLISH_LANGUAGE)
+                        .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
+                        .attach(usDialect()))
+                .attach((Synonym synonym) -> synonym
+                        .text("Image field")
+                        .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
+                        .language(ENGLISH_LANGUAGE)
+                        .attach(usDialect()))
+                .attach((Definition definition) -> definition
+                        .text("An image")
+                        .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
+                        .language(ENGLISH_LANGUAGE)
+                        .attach(usDialect()))
+                .attach((Identifier identifier) -> identifier
+                        .source(UNIVERSALLY_UNIQUE_IDENTIFIER)
+                        .identifier(IMAGE_FIELD.asUuidArray()[0].toString()))
+                .attach((StatedNavigation statedNavigation) -> statedNavigation
+                        .parents(DISPLAY_FIELDS))
+                .attach((StatedAxiom statedAxiom) -> statedAxiom
+                        .isA(DISPLAY_FIELDS))
+                .attach(new TinkarBaseModel());
+
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(CANCELED_STATE))
                 .attach((FullyQualifiedName fqn) -> fqn
                         .text("Canceled state")
@@ -2084,7 +2109,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .attach(usDialect()))
                 .attach((Synonym synonym) -> synonym
-                        .text("Instant/ DiGraph")
+                        .text("DiGraph field")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
@@ -2248,7 +2273,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .source(UNIVERSALLY_UNIQUE_IDENTIFIER)
                         .identifier(DISPLAY_FIELDS.asUuidArray()[0].toString()))
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
-                        .children(COMPONENT_FIELD, COMPONENT_ID_LIST_FIELD, COMPONENT_ID_SET_FIELD, CONCEPT_FIELD, DIGRAPH_FIELD, DITREE_FIELD, FLOAT_FIELD, INTEGER_FIELD, SEMANTIC_FIELD_TYPE, STRING, DECIMAL_FIELD)
+                        .children(COMPONENT_FIELD, COMPONENT_ID_LIST_FIELD, COMPONENT_ID_SET_FIELD, CONCEPT_FIELD, DIGRAPH_FIELD, DITREE_FIELD, FLOAT_FIELD, INTEGER_FIELD, SEMANTIC_FIELD_TYPE, STRING, DECIMAL_FIELD, BYTE_ARRAY_FIELD, IMAGE_FIELD)
                         .parents(TINKAR_MODEL_CONCEPT))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
                         .isA(TINKAR_MODEL_CONCEPT))
@@ -2961,9 +2986,9 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .source(UNIVERSALLY_UNIQUE_IDENTIFIER)
                         .identifier(HEALTH_CONCEPT.asUuidArray()[0].toString()))
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
-                        .parents(ROOT_VERTEX))
+                        .parents(PHENOMENON))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(ROOT_VERTEX))
+                        .isA(PHENOMENON))
                 .attach(new TinkarBaseModel());
 
 
@@ -4950,9 +4975,9 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .identifier(PHENOMENON.asUuidArray()[0].toString()))
                 .attach((StatedNavigation statedNavigation) -> statedNavigation
                         .children(EXAMPLE_UCUM_UNITS)
-                        .parents(TINKAR_MODEL_CONCEPT))
+                        .parents(ROOT_VERTEX))
                 .attach((StatedAxiom statedAxiom) -> statedAxiom
-                        .isA(TINKAR_MODEL_CONCEPT))
+                        .isA(ROOT_VERTEX))
                 .attach(new TinkarBaseModel());
 
 

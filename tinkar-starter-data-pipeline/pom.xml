@@ -256,7 +256,7 @@
 			<activation>
 				<property>
 					<name>repositoryId</name>
-					<value>!ossrh</value>
+					<value>!central</value>
 				</property>
 			</activation>
 			<build>
@@ -294,7 +294,7 @@
 			<activation>
 				<property>
 					<name>repositoryId</name>
-					<value>ossrh</value>
+					<value>central</value>
 				</property>
 			</activation>
 			<build>

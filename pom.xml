@@ -79,6 +79,17 @@
         <module>tinkar-starter-data-pipeline</module>
     </modules>
 
+    <distributionManagement>
+       <snapshotRepository>
+           <id>central</id>
+           <url>http://repository.apache.org/snapshots/</url>
+       </snapshotRepository>
+       <repository>
+           <id>central</id>
+           <url>https://repo.maven.apache.org/maven2/</url>
+       </repository>
+   </distributionManagement>
+
     <dependencyManagement>
         <dependencies>
             <dependency>

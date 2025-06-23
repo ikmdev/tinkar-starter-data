@@ -8,7 +8,7 @@
 	<parent>
 		<groupId>dev.ikm.maven.tinkar</groupId>
 		<artifactId>tinkar-starter-data-parent</artifactId>
-		<version>1.2.1-SNAPSHOT</version>
+		<version>1.3.2-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>tinkar-starter-data-pipeline</artifactId>
@@ -256,7 +256,7 @@
 			<activation>
 				<property>
 					<name>repositoryId</name>
-					<value>!ossrh</value>
+					<value>!central</value>
 				</property>
 			</activation>
 			<build>
@@ -294,7 +294,7 @@
 			<activation>
 				<property>
 					<name>repositoryId</name>
-					<value>ossrh</value>
+					<value>central</value>
 				</property>
 			</activation>
 			<build>
@@ -310,7 +310,7 @@
 									<goal>sign-and-deploy-file</goal>
 								</goals>
 								<configuration>
-									<repositoryId>${repositoryId}</repositoryId>
+<!-- 									<repositoryId>${repositoryId}</repositoryId> -->
 									<url>${project.distributionManagement.repository.url}</url>
 									<groupId>${data-artifact.groupId}</groupId>
 									<artifactId>${data-artifact.artifactId}</artifactId>

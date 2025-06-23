@@ -310,7 +310,7 @@
 									<goal>sign-and-deploy-file</goal>
 								</goals>
 								<configuration>
-									<repositoryId>${repositoryId}</repositoryId>
+<!-- 									<repositoryId>${repositoryId}</repositoryId> -->
 									<url>${project.distributionManagement.repository.url}</url>
 									<groupId>${data-artifact.groupId}</groupId>
 									<artifactId>${data-artifact.artifactId}</artifactId>

@@ -311,7 +311,7 @@
 								</goals>
 								<configuration>
 									<repositoryId>${repositoryId}</repositoryId>
-									<url>${project.maven-central-staging.url}</url>
+									<url>${centralBaseUrl}</url>
 									<groupId>${data-artifact.groupId}</groupId>
 									<artifactId>${data-artifact.artifactId}</artifactId>
 									<version>${data-artifact.version}</version>

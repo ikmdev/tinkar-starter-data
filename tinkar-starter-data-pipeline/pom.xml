@@ -27,6 +27,7 @@
 		<deploymentFiles>${project.basedir}/pom.xml,${data-artifact.path-prefix}-unreasoned-sa.zip,${data-artifact.path-prefix}-reasoned-sa.zip,${data-artifact.path-prefix}-unreasoned-pb.zip,${data-artifact.path-prefix}-reasoned-pb.zip</deploymentFiles>
 		<deploymentClassifiers>pipeline,unreasoned-sa,reasoned-sa,unreasoned-pb,reasoned-pb</deploymentClassifiers>
 		<deploymentTypes>xml,zip,zip,zip,zip</deploymentTypes>
+		<maven-central-staging.url>https://central.sonatype.com</maven-central-staging.url>
 	</properties>
 
 	<build>
@@ -311,7 +312,7 @@
 								</goals>
 								<configuration>
 									<repositoryId>${repositoryId}</repositoryId>
-									<url>${centralBaseUrl}</url>
+									<url>${maven-central-staging.url}</url>
 									<groupId>${data-artifact.groupId}</groupId>
 									<artifactId>${data-artifact.artifactId}</artifactId>
 									<version>${data-artifact.version}</version>

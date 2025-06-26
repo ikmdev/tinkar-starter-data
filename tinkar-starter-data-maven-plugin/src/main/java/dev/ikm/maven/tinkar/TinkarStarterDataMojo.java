@@ -1160,7 +1160,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
                 .attach((Definition definition) -> definition
-                        .text("Null")
+                        .text("Concept focus")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
@@ -1641,7 +1641,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
                 .attach((Definition definition) -> definition
-                        .text("Null")
+                        .text("Definition root")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
@@ -1894,7 +1894,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
                 .attach((Definition definition) -> definition
-                        .text("Null")
+                        .text("Description logic profile for logic coordinate")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
@@ -2021,7 +2021,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
                 .attach((Definition definition) -> definition
-                        .text("Null")
+                        .text("Description type preference list for language coordinate")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
@@ -2072,7 +2072,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
                 .attach((Definition definition) -> definition
-                        .text("Null")
+                        .text("Description-logic profile")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
@@ -2098,7 +2098,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
                 .attach((Definition definition) -> definition
-                        .text("Null")
+                        .text("Destination module for edit coordinate")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
@@ -2273,7 +2273,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
                 .attach((Definition definition) -> definition
-                        .text("Null")
+                        .text("Directed graph")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
@@ -2454,7 +2454,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
                 .attach((Definition definition) -> definition
-                        .text("Null")
+                        .text("El++ Inferred Concept Definition")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
@@ -2479,7 +2479,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
                 .attach((Definition definition) -> definition
-                        .text("Null")
+                        .text("EL++ Inferred terminological axioms")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
@@ -2505,7 +2505,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
                 .attach((Definition definition) -> definition
-                        .text("Null")
+                        .text("EL++ Stated Concept Definition")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
@@ -2530,7 +2530,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
                 .attach((Definition definition) -> definition
-                        .text("Null")
+                        .text("EL++ Stated terminological axioms")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
@@ -2808,7 +2808,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
                 .attach((Definition definition) -> definition
-                        .text("Null")
+                        .text("Float substitution")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
@@ -3010,7 +3010,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
                 .attach((Definition definition) -> definition
-                        .text("Null")
+                        .text("Grouping")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
@@ -3037,7 +3037,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
                 .attach((Definition definition) -> definition
-                        .text("Null")
+                        .text("Health concept")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
@@ -3643,7 +3643,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
                 .attach((Definition definition) -> definition
-                        .text("Null")
+                        .text("Language coordinate name")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
@@ -3694,7 +3694,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
                 .attach((Definition definition) -> definition
-                        .text("Null")
+                        .text("Language nid for language coordinate")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
@@ -3719,7 +3719,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
                 .attach((Definition definition) -> definition
-                        .text("Null")
+                        .text("Language specification for language coordinate")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
@@ -3819,7 +3819,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
                 .attach((Definition definition) -> definition
-                        .text("Null")
+                        .text("Logic coordinate name")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
@@ -3896,7 +3896,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
                 .attach((Definition definition) -> definition
-                        .text("Null")
+                        .text("Logical expression field")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
@@ -3911,7 +3911,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(LOGICAL_EXPRESSION_SEMANTIC))
                 .attach((FullyQualifiedName fqn) -> fqn
-                        .text("Logical expression semantic  (SOLOR)")
+                        .text("Logical expression semantic (SOLOR)")
                         .language(ENGLISH_LANGUAGE)
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .attach(usDialect()))
@@ -3921,7 +3921,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
                 .attach((Definition definition) -> definition
-                        .text("Null")
+                        .text("Logical expression semantic")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
@@ -4108,7 +4108,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
                 .attach((Definition definition) -> definition
-                        .text("Null")
+                        .text("Module")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
@@ -6498,7 +6498,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
                 .attach((Definition definition) -> definition
-                        .text("Null")
+                        .text("Author")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
@@ -6549,7 +6549,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
                 .attach((Definition definition) -> definition
-                        .text("Null")
+                        .text("Version Properties")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))

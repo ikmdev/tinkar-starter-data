@@ -72,6 +72,8 @@
         <!-- Templating Plugin Version-->
         <templating-maven-plugin.version>3.0.0</templating-maven-plugin.version>
         <builder-helper-maven-plugin.version>3.6.0</builder-helper-maven-plugin.version>
+        <!-- Bundling & Publishing Version -->
+        <central-custom-publishing-maven-plugin.version>0.0.2</central-custom-publishing-maven-plugin.version>
     </properties>
 
     <modules>

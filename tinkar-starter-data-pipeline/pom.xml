@@ -304,7 +304,7 @@
 						<plugin>
 							<groupId>dev.ikm.build</groupId>
 							<artifactId>central-custom-publishing-maven-plugin</artifactId>
-							<version>0.0.2</version>
+							<version>${central-custom-publishing-maven-plugin.version}</version>
 						</plugin>
 					</plugins>
 				</pluginManagement>

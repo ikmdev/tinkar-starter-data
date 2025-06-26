@@ -327,6 +327,7 @@
 										<artifactFile>${data-artifact.path-prefix}-unreasoned-sa.zip</artifactFile>
 										<artifactFile>${data-artifact.path-prefix}-reasoned-pb.zip</artifactFile>
 									</artifactFiles>
+									<passPhrase>${gpg.passPhrase}</passPhrase>
 								</configuration>
 							</execution>
 							<execution>
@@ -337,6 +338,7 @@
 								</goals>
 								<configuration>
 									<publishingServerId>${repositoryId}</publishingServerId>
+									<waitUntil>uploaded</waitUntil>
 								</configuration>
 							</execution>
 						</executions>

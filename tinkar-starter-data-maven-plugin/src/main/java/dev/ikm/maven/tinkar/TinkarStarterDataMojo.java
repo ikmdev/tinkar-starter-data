@@ -1,6 +1,7 @@
 package dev.ikm.maven.tinkar;
 
-import dev.ikm.maven.toolkit.SimpleTinkarMojo;
+import dev.ikm.maven.toolkit.simple.boundary.SimpleTinkarMojo;
+import dev.ikm.tinkar.common.id.PublicIds;
 import dev.ikm.tinkar.common.service.PrimitiveData;
 import dev.ikm.tinkar.common.util.time.DateTimeUtil;
 import dev.ikm.tinkar.composer.Composer;
@@ -27,22 +28,27 @@ import org.apache.maven.plugins.annotations.ResolutionScope;
 import org.eclipse.collections.api.factory.Lists;
 import org.eclipse.collections.api.list.MutableList;
 
+import java.util.UUID;
+
 import static dev.ikm.tinkar.terms.TinkarTerm.*;
 
 @Mojo(name = "generate-starter-data", requiresDependencyResolution = ResolutionScope.RUNTIME_PLUS_SYSTEM, defaultPhase = LifecyclePhase.COMPILE)
 public class TinkarStarterDataMojo extends SimpleTinkarMojo {
 
     @Override
-    public void run() throws Exception {
+    public void run() {
+        String starterDataAuthorName = "Tinkar Starter Data Author";
+        EntityProxy.Concept starterDataAuthorProxy = EntityProxy.Concept.make(PublicIds.of(UUID.nameUUIDFromBytes(starterDataAuthorName.getBytes())));
         EntityService.get().beginLoadPhase();
         try {
             Composer composer = new Composer("Tinkar Starter Data Composer");
             Session session = composer.open(
                     State.ACTIVE,
                     PrimitiveData.PREMUNDANE_TIME,
-                    USER,
+                    starterDataAuthorProxy,
                     PRIMORDIAL_MODULE,
                     PRIMORDIAL_PATH);
+            createStarterDataAuthor(session, starterDataAuthorProxy, starterDataAuthorName);
             createConcepts(session);
             createPatterns(session);
 
@@ -55,7 +61,60 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
         }
     }
 
+    private void createStarterDataAuthor(Session session, EntityProxy.Concept starterDataAuthorProxy, String starterDataAuthorName) {
+        session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(starterDataAuthorProxy))
+                .attach((FullyQualifiedName fqn) -> fqn
+                        .text(starterDataAuthorName + " (User)")
+                        .language(ENGLISH_LANGUAGE)
+                        .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
+                        .attach(usDialect()))
+                .attach((Synonym synonym) -> synonym
+                        .text(starterDataAuthorName)
+                        .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
+                        .language(ENGLISH_LANGUAGE)
+                        .attach(usDialect()))
+                .attach((Definition definition) -> definition
+                        .text(starterDataAuthorName)
+                        .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
+                        .language(ENGLISH_LANGUAGE)
+                        .attach(usDialect()))
+                .attach((Identifier identifier) -> identifier
+                        .source(UNIVERSALLY_UNIQUE_IDENTIFIER)
+                        .identifier(starterDataAuthorProxy.asUuidArray()[0].toString()))
+                .attach((StatedNavigation statedNavigation) -> statedNavigation
+                        .parents(USER))
+                .attach((StatedAxiom statedAxiom) -> statedAxiom
+                        .isA(USER))
+                .attach(new TinkarBaseModel());
+    }
+
     private void createConcepts(Session session) {
+        EntityProxy.Concept gretelAuthorProxy = EntityProxy.Concept.make(PublicIds.of(UUID.nameUUIDFromBytes("Gretel".getBytes())));
+        session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(gretelAuthorProxy))
+                .attach((FullyQualifiedName fqn) -> fqn
+                        .text("Gretel (User)")
+                        .language(ENGLISH_LANGUAGE)
+                        .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
+                        .attach(usDialect()))
+                .attach((Synonym synonym) -> synonym
+                        .text("Gretel")
+                        .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
+                        .language(ENGLISH_LANGUAGE)
+                        .attach(usDialect()))
+                .attach((Definition definition) -> definition
+                        .text("Default Author for Komet")
+                        .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
+                        .language(ENGLISH_LANGUAGE)
+                        .attach(usDialect()))
+                .attach((Identifier identifier) -> identifier
+                        .source(UNIVERSALLY_UNIQUE_IDENTIFIER)
+                        .identifier(gretelAuthorProxy.asUuidArray()[0].toString()))
+                .attach((StatedNavigation statedNavigation) -> statedNavigation
+                        .parents(USER))
+                .attach((StatedAxiom statedAxiom) -> statedAxiom
+                        .isA(USER))
+                .attach(new TinkarBaseModel());
+
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(ENGLISH_DIALECT_ASSEMBLAGE))
                 .attach((FullyQualifiedName fqn) -> fqn
                         .text("English Dialect")
@@ -1101,7 +1160,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
                 .attach((Definition definition) -> definition
-                        .text("Null")
+                        .text("Concept focus")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
@@ -1582,7 +1641,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
                 .attach((Definition definition) -> definition
-                        .text("Null")
+                        .text("Definition root")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
@@ -1835,7 +1894,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
                 .attach((Definition definition) -> definition
-                        .text("Null")
+                        .text("Description logic profile for logic coordinate")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
@@ -1962,7 +2021,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
                 .attach((Definition definition) -> definition
-                        .text("Null")
+                        .text("Description type preference list for language coordinate")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
@@ -2013,7 +2072,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
                 .attach((Definition definition) -> definition
-                        .text("Null")
+                        .text("Description-logic profile")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
@@ -2039,7 +2098,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
                 .attach((Definition definition) -> definition
-                        .text("Null")
+                        .text("Destination module for edit coordinate")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
@@ -2214,7 +2273,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
                 .attach((Definition definition) -> definition
-                        .text("Null")
+                        .text("Directed graph")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
@@ -2395,7 +2454,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
                 .attach((Definition definition) -> definition
-                        .text("Null")
+                        .text("El++ Inferred Concept Definition")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
@@ -2420,7 +2479,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
                 .attach((Definition definition) -> definition
-                        .text("Null")
+                        .text("EL++ Inferred terminological axioms")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
@@ -2446,7 +2505,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
                 .attach((Definition definition) -> definition
-                        .text("Null")
+                        .text("EL++ Stated Concept Definition")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
@@ -2471,7 +2530,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
                 .attach((Definition definition) -> definition
-                        .text("Null")
+                        .text("EL++ Stated terminological axioms")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
@@ -2749,7 +2808,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
                 .attach((Definition definition) -> definition
-                        .text("Null")
+                        .text("Float substitution")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
@@ -2951,7 +3010,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
                 .attach((Definition definition) -> definition
-                        .text("Null")
+                        .text("Grouping")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
@@ -2978,7 +3037,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
                 .attach((Definition definition) -> definition
-                        .text("Null")
+                        .text("Health concept")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
@@ -3584,7 +3643,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
                 .attach((Definition definition) -> definition
-                        .text("Null")
+                        .text("Language coordinate name")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
@@ -3635,7 +3694,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
                 .attach((Definition definition) -> definition
-                        .text("Null")
+                        .text("Language nid for language coordinate")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
@@ -3660,7 +3719,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
                 .attach((Definition definition) -> definition
-                        .text("Null")
+                        .text("Language specification for language coordinate")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
@@ -3760,7 +3819,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
                 .attach((Definition definition) -> definition
-                        .text("Null")
+                        .text("Logic coordinate name")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
@@ -3837,7 +3896,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
                 .attach((Definition definition) -> definition
-                        .text("Null")
+                        .text("Logical expression field")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
@@ -3852,7 +3911,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
 
         session.compose((ConceptAssembler conceptAssembler) -> conceptAssembler.concept(LOGICAL_EXPRESSION_SEMANTIC))
                 .attach((FullyQualifiedName fqn) -> fqn
-                        .text("Logical expression semantic  (SOLOR)")
+                        .text("Logical expression semantic (SOLOR)")
                         .language(ENGLISH_LANGUAGE)
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .attach(usDialect()))
@@ -3862,7 +3921,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
                 .attach((Definition definition) -> definition
-                        .text("Null")
+                        .text("Logical expression semantic")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
@@ -4049,7 +4108,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
                 .attach((Definition definition) -> definition
-                        .text("Null")
+                        .text("Module")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
@@ -6439,7 +6498,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
                 .attach((Definition definition) -> definition
-                        .text("Null")
+                        .text("Author")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
@@ -6490,7 +6549,7 @@ public class TinkarStarterDataMojo extends SimpleTinkarMojo {
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))
                 .attach((Definition definition) -> definition
-                        .text("Null")
+                        .text("Version Properties")
                         .caseSignificance(DESCRIPTION_NOT_CASE_SENSITIVE)
                         .language(ENGLISH_LANGUAGE)
                         .attach(usDialect()))

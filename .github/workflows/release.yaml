@@ -45,7 +45,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: 'zulu'
-          java-version: '23'
+          java-version: '24'
 
       - name: Maven Build Plugin
         shell: bash
@@ -59,7 +59,7 @@ jobs:
             -f tinkar-starter-data-maven-plugin
 
       - name: Shared Release Action
-        uses: ikmdev/maven-semver-release-action@v2.2.0
+        uses: ikmdev/maven-semver-release-action@v2.7.0
         with:
           version_type: ${{ github.event.inputs.version_type }}
           github_token: ${{secrets.GITHUB_TOKEN}}

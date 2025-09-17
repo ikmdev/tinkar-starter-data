@@ -49,7 +49,7 @@ jobs:
         id: ikmdev_post_build
         uses: ikmdev/maven-post-build-action@v3.3.0
         with:
-            nexus_repo_password: ${{secrets.EC2_NEXUS_PASSWORD}}
+            nexus_repo_password: ${{secrets.NEXUS_PASSWORD}}
             branch_name: ${{env.BRANCH_NAME}}
             github_token: ${{secrets.GITHUB_TOKEN}}
             maven_central_username: ${{secrets.MC_SECRET_USERNAME}}
